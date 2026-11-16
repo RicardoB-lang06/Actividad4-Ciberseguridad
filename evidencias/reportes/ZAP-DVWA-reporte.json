@@ -1,0 +1,1393 @@
+{
+	"@programName": "ZAP",
+	"@version": "2.17.0",
+	"@generated": "dom, 15 nov 2026 23:26:39",
+	"created": "2026-11-16T05:26:39.737515600Z",
+	"insights":[
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.code.2xx",
+			"description": "Percentage of responses with status code 2xx",
+			"statistic": "82"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.code.3xx",
+			"description": "Percentage of responses with status code 3xx",
+			"statistic": "7"
+		},
+		{
+			"level": "Información",
+			"reason": "Exceeded Low",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.code.4xx",
+			"description": "Percentage of responses with status code 4xx",
+			"statistic": "9"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.application/javascript",
+			"description": "Percentage of endpoints with content type application/javascript",
+			"statistic": "5"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.application/pdf",
+			"description": "Percentage of endpoints with content type application/pdf",
+			"statistic": "2"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.image/png",
+			"description": "Percentage of endpoints with content type image/png",
+			"statistic": "2"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.image/vnd.microsoft.icon",
+			"description": "Percentage of endpoints with content type image/vnd.microsoft.icon",
+			"statistic": "2"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.text/css",
+			"description": "Percentage of endpoints with content type text/css",
+			"statistic": "2"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.text/html",
+			"description": "Percentage of endpoints with content type text/html",
+			"statistic": "82"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.ctype.text/plain",
+			"description": "Percentage of endpoints with content type text/plain",
+			"statistic": "2"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.method.GET",
+			"description": "Percentage of endpoints with method GET",
+			"statistic": "80"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.method.POST",
+			"description": "Percentage of endpoints with method POST",
+			"statistic": "20"
+		},
+		{
+			"level": "Información",
+			"reason": "Informativo",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.endpoint.total",
+			"description": "Count of total endpoints",
+			"statistic": "40"
+		},
+		{
+			"level": "Información",
+			"reason": "Exceeded Low",
+			"site": "http://127.0.0.1:8080",
+			"key": "insight.response.slow",
+			"description": "Percentage of slow responses",
+			"statistic": "5"
+		}
+	],
+	"site":[ 
+		{
+			"@name": "http://127.0.0.1:8080",
+			"@host": "127.0.0.1",
+			"@port": "8080",
+			"@ssl": "false",
+			"alerts": [ 
+				{
+					"pluginid": "40012",
+					"alertRef": "40012",
+					"alert": "Cross Site Scripting (Reflected)",
+					"name": "Cross Site Scripting (Reflected)",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "Alto (Media)",
+					"desc": "<p>Cross_site Scripting (XSS) es una t\u00E9cnica de ataque que comprende hacer eco del c\u00F3digo que fue proporcionado por el atacante en la instancia del navegador de un usuario. Una instancia de navegador puede ser un cliente de navegador web corriente, o un objeto de navegador integrado e un producto de software, como el navegador que se encuentra dentro de WinAmp, un lector de RSS o un cliente de correos electr\u00F3nicos. El c\u00F3digo por s\u00ED mismo se encuentra escrito en HTML/JavaScript, pero tambi\u00E9n puede extenderse a VBScript, ActiveX, Jave, Flash o cualquier otra tecnolog\u00EDa que sea compatible con el navegador.</p><p>Cuando un atacante consigue el navegador de un usuario para poder ejecutar su c\u00F3digo, el c\u00F3digo se ejecutar\u00E1 dentro del contexto de seguridad (o zona) del sitio web de hospedaje. Con este nivel de privilegio, el c\u00F3digo tiene la extensi\u00F3n de leer, modificar y transmitir cualquier dato que sea sensible al que pueda ingresar al navegador. Un usuario de Cross-Site Scripted puede ser que tenga su cuenta secuetrada (robo de cookies), su navegador redirigido a otra ubicaci\u00F3n, posiblemente mostrando contenido ilegal entregado por el sitio web que est\u00E1n visitando. Los ataques de scripting entre los sitios relativamente comprometen la relaci\u00F3n de la confianza entre el usuario y el sitio web. Las aplicaciones que usan instancias de objetos del navegador que suben contenido desde el sistema de archivos puede activar el c\u00F3digo bajo la zona de lam m\u00E1quina, lo cual permite que el sistema se vea comprometido.</p><p></p><p>Hay tres tipos de ataques diferentes de scripting entre los sitios: no persistentes, persistentes y basados en DOM.</p><p>Los ataques que no son persistentes y los basados en DOM necesitan que el usuario visite un enlace que fue dise\u00F1ado con c\u00F3digo maliciosos o visite alguna p\u00E1gina web maliciosa que incluya un formulario web que, cuando se publique en el sitio que es vulnerable, originar\u00E1 el ataque. El uso de un formulario que es malicioso normalmente tendr\u00E1 lugarcuando el recurso que es vulnerable solo acepte las solicitudes HTTP POST. En tal caso, el formulario puede se enviado de forma autom\u00E1tica, sin el conocimiento de la v\u00EDctima (por ejemplo, por medio de JavaScript). Al hacer clic en el enlace que es malicioso o al enviar el formulario malicioso, la carga que es \u00FAtil de CSS recibir\u00E1 eco y ser\u00E1 interpretada por el navegador del usuario y se activar\u00E1. Otra t\u00E9cnica para poder prevenir solicitudes casi arbitrarias (GET y POST) es por medio del uso de un cliente integrado, como adobe Flash.</p><p>Los ataques continuos se originan cuando el c\u00F3digo que es malicioso se env\u00EDa a un sitio web donde se almacena durante un per\u00EDodo de tiempo. Algunos ejemplos de los objetivos preferidos de los atacantes incluyen mensajes en carteleras de anuncios, mensajes de correo electr\u00F3nico y programas de chat. El usuario desprevenido no tendr\u00E1 que interactuar con ning\u00FAn sitio/enlace adicional (por ejemplo, un sitio o link malicioso enviado por correo electr\u00F3nico), solamente bastar\u00E1 con abrir la p\u00E1gina web que contiene el c\u00F3digo.</p>",
+					"instances":[ 
+						{
+							"id": "279",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/sqli/?Submit=Submit&id=%27%22%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/sqli\/ (Submit,id)",
+							"method": "GET",
+							"param": "id",
+							"attack": "'\"<scrIpt>alert(1);</scRipt>",
+							"evidence": "'\"<scrIpt>alert(1);</scRipt>",
+							"otherinfo": ""
+						},
+						{
+							"id": "278",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_r/?name=%3C%2Fpre%3E%3CscrIpt%3Ealert%281%29%3B%3C%2FscRipt%3E%3Cpre%3E",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_r\/ (name)",
+							"method": "GET",
+							"param": "name",
+							"attack": "</pre><scrIpt>alert(1);</scRipt><pre>",
+							"evidence": "</pre><scrIpt>alert(1);</scRipt><pre>",
+							"otherinfo": ""
+						},
+						{
+							"id": "280",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/ ()(include)",
+							"method": "POST",
+							"param": "include",
+							"attack": "javascript:alert(1);",
+							"evidence": "javascript:alert(1);",
+							"otherinfo": ""
+						},
+						{
+							"id": "283",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/ ()(btnSign,mtxMessage,txtName)",
+							"method": "POST",
+							"param": "btnSign",
+							"attack": "</div><scrIpt>alert(1);</scRipt><div>",
+							"evidence": "</div><scrIpt>alert(1);</scRipt><div>",
+							"otherinfo": ""
+						},
+						{
+							"id": "282",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/ ()(btnSign,mtxMessage,txtName)",
+							"method": "POST",
+							"param": "mtxMessage",
+							"attack": "</div><scrIpt>alert(1);</scRipt><div>",
+							"evidence": "</div><scrIpt>alert(1);</scRipt><div>",
+							"otherinfo": ""
+						},
+						{
+							"id": "281",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/ ()(btnSign,mtxMessage,txtName)",
+							"method": "POST",
+							"param": "txtName",
+							"attack": "</div><scrIpt>alert(1);</scRipt><div>",
+							"evidence": "</div><scrIpt>alert(1);</scRipt><div>",
+							"otherinfo": ""
+						}
+					],
+					"count": "6",
+					"systemic": false,
+					"solution": "<p>Fase: Arquitectura y Dise\u00F1o</p><p>Utilizar una biblioteca o framework verificado y confiable que evite esta vulnerabilidad o proporcione elementos que faciliten evitarla.</p><p>Los ejemplos de las bibliotecas y marcos que facilitan el origen de resultados que son codificados de forma correcta incluyen la biblioteca Anti-XSS de Microsoft, el m\u00F3dulo de codificaci\u00F3n OWASP ESAPI y Apache Wicket.</p><p></p><p>Fases: Implementaci\u00F3n; Arquitectura y Dise\u00F1o</p><p>Comprenda el contexto en el que se va a utilizar sus datos y la condificaci\u00F3n que se va a esperar. Esto es fundamentalmente importante cuando se transmiten los datos entre diferentes componentes o cuando se generan las salidas que pueden comprender m\u00FAltiples codificaciones al mismo tiempo, como paginas web o mensajes de correos de varias zonas. Estudie todos los protocolos de comunicac\u00F3n y representaciones de los datos que son esperadas para poder determinar las estrategias de codificaci\u00F3n que son necesarias.</p><p>Por cualquier dato que se enviar\u00E1 a otra p\u00E1gina web, en especial cualquier dato recibido de las entradas externas, utiice la codificaci\u00F3n que sea conveniente en todos los caracteres que no sean alfanum\u00E9ricos.</p><p>Consulte la hoja de referencia de prevenci\u00F3n de CSS para poder obtener m\u00E1s informaci\u00F3n detallada de los diferentes tipos de condificaci\u00F3n y escape que se requieren.</p><p></p><p>Fase: Arquitectura y Dise\u00F1o</p><p>Cualquier comprobaci\u00F3n de seguridad que se vaya a realizar en el lado del cliente, aseg\u00FArese de que estas comprobaciones se encuentre duplicadas en el lado del servidor, para evitar el CWE-602. Los atacantes pueden eludir las comprobaciones del lado del cliente modificando los valores despu\u00E9s de que se hayan realizado las comprobaciones, o cambiando al cliente para poder eliminar de forma completa las comprobaciones del lado del cliente. Despu\u00E9s, estos valores que fueron modificados ser\u00E1n enviados al servidor.</p><p></p><p>Si se encuentra disponible, utilice los mecanismos estructurados que apliquen de forma autom\u00E1tica la separaci\u00F3n entre los datos y c\u00F3digos. Estos mecanismos pueden otorgar la cotizaci\u00F3n, codificaci\u00F3n y validaci\u00F3n relevantes de manera autom\u00E1tica, en lugar de confiar en que el desarrollador proporcione esta capacidad en cada uno de los puntos donde se origina la salida.</p><p></p><p>Fase: Implementaci\u00F3n</p><p>Para cada una de las p\u00E1ginas web que se origina, utilice y especifique una codificaci\u00F3n de caracteres como ISO-8859 o UTF-8. Cuando no se puede especificar una condificaci\u00F3n, el navegador web podr\u00EDa selaccionar una codificaci\u00F3n distinta adivinando que codificiaci\u00F3n est\u00E1 siendo utilizada en verdad por la p\u00E1gina web. Esto puede permitir que el navegador web trate varias secuencias como especiales, abriendo al cliente a leves ataques XSS. Consulte CWE-116 para conseguir m\u00E1s mitigaciones con respecto a la codificaci\u00F3n/escape.</p><p></p><p>Para ayudar a mitigar los ataques XSS contra las cookies de la sesi\u00F3n del usuario, es necesario establecer que la cookie de la sesi\u00F3n sea HttpOnly. En navegadores que son compatibles con la caracter\u00EDstica HttpOnly (como las versiones m\u00E1s actualizadas de internet explorer y firefox), esta caracter\u00EDstica puede prevenir que la cookie de sesi\u00F3n del usuario sea accesible para las secuencias de comandos del lado del cliente malignas que utilizan document.cookie. Esta no es una soluci\u00F3n muy completa, ya que HttpOnly no es compatible con todos los navegadores que hay. M\u00E1s importante a\u00FAn, XMLHTTPRequest y otras tecnolog\u00EDas poderosas de navegador otorgan acceso de lectura a los encabezados HTTP, incluido el encabezado Set-Cookie en el cual se establece el indicador HttpOnly.</p><p></p><p>Asuma que toda la entrada es maliciosa. Utilizar una estrategia de validaci\u00F3n de entradas de tipo \"aceptar lo bueno conocido\", es decir, utilizar una lista de entradas aceptables que se ajusten estrictamente a las especificaciones. Rechace cualquier entrada que no se adapte de forma estricta a las especificaciones, o cambielas por algo que s\u00ED lo haga. No conf\u00EDe exclusivamente en la b\u00FAsqueda de entradas maliciosas o malformadas (es decir, no conf\u00EDe en una lista de denegaci\u00F3n). Sin embargo, las listas de denegaci\u00F3n pueden ser \u00FAtiles para detectar posibles ataques o para determinar qu\u00E9 entradas est\u00E1n tan malformadas que deben ser rechazadas directamente.</p><p></p><p>Al realizar la validaci\u00F3n de entrada, usted debe considerar todas las propiedades potencialmente destacadas, incluida la longitud, el tipo de entrada, el rango completo de valores aceptables, las entradas faltantes o adicionales, la sintaxis, el sentido entre los campos que se encuentran relacionados y la conformidad con todas las reglas comerciales. Como ejemplo de l\u00F3gica de regla de negocio, \"barco\" puede ser sint\u00E1cticamente v\u00E1lido porque s\u00F3lo contiene caracteres alfanum\u00E9ricos, pero no es v\u00E1lido si se esperan colores como \"rojo\" o \"azul\".</p><p></p><p>Aseg\u00FArese de realizar la validaci\u00F3n de entradas en interfaces bien definidas dentro de la aplicaci\u00F3n. Esto ayudar\u00E1 a cuidar la aplicaci\u00F3n, incluso si un elemento se utiliza de nuevo o traslada a otro sitio.</p><p>\t</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-community/attacks/xss/</p><p>https://cwe.mitre.org/data/definitions/79.html</p>",
+					"cweid": "79",
+					"wascid": "8",
+					"sourceid": "562"
+				},
+				{
+					"pluginid": "40014",
+					"alertRef": "40014-1",
+					"alert": "Cross Site Scripting XSS (Persistente)",
+					"name": "Cross Site Scripting XSS (Persistente)",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "Alto (Media)",
+					"desc": "<p>Cross_site Scripting (XSS) es una t\u00E9cnica de ataque que comprende hacer eco del c\u00F3digo que fue proporcionado por el atacante en la instancia del navegador de un usuario. Una instancia de navegador puede ser un cliente de navegador web corriente, o un objeto de navegador integrado e un producto de software, como el navegador que se encuentra dentro de WinAmp, un lector de RSS o un cliente de correos electr\u00F3nicos. El c\u00F3digo por s\u00ED mismo se encuentra escrito en HTML/JavaScript, pero tambi\u00E9n puede extenderse a VBScript, ActiveX, Jave, Flash o cualquier otra tecnolog\u00EDa que sea compatible con el navegador.</p><p>Cuando un atacante consigue el navegador de un usuario para poder ejecutar su c\u00F3digo, el c\u00F3digo se ejecutar\u00E1 dentro del contexto de seguridad (o zona) del sitio web de hospedaje. Con este nivel de privilegio, el c\u00F3digo tiene la extensi\u00F3n de leer, modificar y transmitir cualquier dato que sea sensible al que pueda ingresar al navegador. Un usuario de Cross-Site Scripted puede ser que tenga su cuenta secuetrada (robo de cookies), su navegador redirigido a otra ubicaci\u00F3n, posiblemente mostrando contenido ilegal entregado por el sitio web que est\u00E1n visitando. Los ataques de scripting entre los sitios relativamente comprometen la relaci\u00F3n de la confianza entre el usuario y el sitio web. Las aplicaciones que usan instancias de objetos del navegador que suben contenido desde el sistema de archivos puede activar el c\u00F3digo bajo la zona de lam m\u00E1quina, lo cual permite que el sistema se vea comprometido.</p><p></p><p>Hay tres tipos de ataques diferentes de scripting entre los sitios: no persistentes, persistentes y basados en DOM.</p><p>Los ataques que no son persistentes y los basados en DOM necesitan que el usuario visite un enlace que fue dise\u00F1ado con c\u00F3digo maliciosos o visite alguna p\u00E1gina web maliciosa que incluya un formulario web que, cuando se publique en el sitio que es vulnerable, originar\u00E1 el ataque. El uso de un formulario que es malicioso normalmente tendr\u00E1 lugarcuando el recurso que es vulnerable solo acepte las solicitudes HTTP POST. En tal caso, el formulario puede se enviado de forma autom\u00E1tica, sin el conocimiento de la v\u00EDctima (por ejemplo, por medio de JavaScript). Al hacer clic en el enlace que es malicioso o al enviar el formulario malicioso, la carga que es \u00FAtil de CSS recibir\u00E1 eco y ser\u00E1 interpretada por el navegador del usuario y se activar\u00E1. Otra t\u00E9cnica para poder prevenir solicitudes casi arbitrarias (GET y POST) es por medio del uso de un cliente integrado, como adobe Flash.</p><p>Los ataques continuos se originan cuando el c\u00F3digo que es malicioso se env\u00EDa a un sitio web donde se almacena durante un per\u00EDodo de tiempo. Algunos ejemplos de los objetivos preferidos de los atacantes incluyen mensajes en carteleras de anuncios, mensajes de correo electr\u00F3nico y programas de chat. El usuario desprevenido no tendr\u00E1 que interactuar con ning\u00FAn sitio/enlace adicional (por ejemplo, un sitio o link malicioso enviado por correo electr\u00F3nico), solamente bastar\u00E1 con abrir la p\u00E1gina web que contiene el c\u00F3digo.</p>",
+					"instances":[ 
+						{
+							"id": "285",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/",
+							"method": "GET",
+							"param": "mtxMessage",
+							"attack": "</div><script>alert(1);</script><div>",
+							"evidence": "",
+							"otherinfo": "Fuente URL: http://127.0.0.1:8080/vulnerabilities/xss_s/"
+						},
+						{
+							"id": "284",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/",
+							"method": "GET",
+							"param": "txtName",
+							"attack": "</div><script>alert(1);</script><div>",
+							"evidence": "",
+							"otherinfo": "Fuente URL: http://127.0.0.1:8080/vulnerabilities/xss_s/"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Fase: Arquitectura y Dise\u00F1o</p><p>Utilizar una biblioteca o framework verificado y confiable que evite esta vulnerabilidad o proporcione elementos que faciliten evitarla.</p><p>Los ejemplos de las bibliotecas y marcos que facilitan el origen de resultados que son codificados de forma correcta incluyen la biblioteca Anti-XSS de Microsoft, el m\u00F3dulo de codificaci\u00F3n OWASP ESAPI y Apache Wicket.</p><p></p><p>Fases: Implementaci\u00F3n; Arquitectura y Dise\u00F1o</p><p>Comprenda el contexto en el que se va a utilizar sus datos y la condificaci\u00F3n que se va a esperar. Esto es fundamentalmente importante cuando se transmiten los datos entre diferentes componentes o cuando se generan las salidas que pueden comprender m\u00FAltiples codificaciones al mismo tiempo, como paginas web o mensajes de correos de varias zonas. Estudie todos los protocolos de comunicac\u00F3n y representaciones de los datos que son esperadas para poder determinar las estrategias de codificaci\u00F3n que son necesarias.</p><p>Por cualquier dato que se enviar\u00E1 a otra p\u00E1gina web, en especial cualquier dato recibido de las entradas externas, utiice la codificaci\u00F3n que sea conveniente en todos los caracteres que no sean alfanum\u00E9ricos.</p><p>Consulte la hoja de referencia de prevenci\u00F3n de CSS para poder obtener m\u00E1s informaci\u00F3n detallada de los diferentes tipos de condificaci\u00F3n y escape que se requieren.</p><p></p><p>Fase: Arquitectura y Dise\u00F1o</p><p>Cualquier comprobaci\u00F3n de seguridad que se vaya a realizar en el lado del cliente, aseg\u00FArese de que estas comprobaciones se encuentre duplicadas en el lado del servidor, para evitar el CWE-602. Los atacantes pueden eludir las comprobaciones del lado del cliente modificando los valores despu\u00E9s de que se hayan realizado las comprobaciones, o cambiando al cliente para poder eliminar de forma completa las comprobaciones del lado del cliente. Despu\u00E9s, estos valores que fueron modificados ser\u00E1n enviados al servidor.</p><p></p><p>Si se encuentra disponible, utilice los mecanismos estructurados que apliquen de forma autom\u00E1tica la separaci\u00F3n entre los datos y c\u00F3digos. Estos mecanismos pueden otorgar la cotizaci\u00F3n, codificaci\u00F3n y validaci\u00F3n relevantes de manera autom\u00E1tica, en lugar de confiar en que el desarrollador proporcione esta capacidad en cada uno de los puntos donde se origina la salida.</p><p></p><p>Fase: Implementaci\u00F3n</p><p>Para cada una de las p\u00E1ginas web que se origina, utilice y especifique una codificaci\u00F3n de caracteres como ISO-8859 o UTF-8. Cuando no se puede especificar una condificaci\u00F3n, el navegador web podr\u00EDa selaccionar una codificaci\u00F3n distinta adivinando que codificiaci\u00F3n est\u00E1 siendo utilizada en verdad por la p\u00E1gina web. Esto puede permitir que el navegador web trate varias secuencias como especiales, abriendo al cliente a leves ataques XSS. Consulte CWE-116 para conseguir m\u00E1s mitigaciones con respecto a la codificaci\u00F3n/escape.</p><p></p><p>Para ayudar a mitigar los ataques XSS contra las cookies de la sesi\u00F3n del usuario, es necesario establecer que la cookie de la sesi\u00F3n sea HttpOnly. En navegadores que son compatibles con la caracter\u00EDstica HttpOnly (como las versiones m\u00E1s actualizadas de internet explorer y firefox), esta caracter\u00EDstica puede prevenir que la cookie de sesi\u00F3n del usuario sea accesible para las secuencias de comandos del lado del cliente malignas que utilizan document.cookie. Esta no es una soluci\u00F3n muy completa, ya que HttpOnly no es compatible con todos los navegadores que hay. M\u00E1s importante a\u00FAn, XMLHTTPRequest y otras tecnolog\u00EDas poderosas de navegador otorgan acceso de lectura a los encabezados HTTP, incluido el encabezado Set-Cookie en el cual se establece el indicador HttpOnly.</p><p></p><p>Asuma que toda la entrada es maliciosa. Utilizar una estrategia de validaci\u00F3n de entradas de tipo \"aceptar lo bueno conocido\", es decir, utilizar una lista de entradas aceptables que se ajusten estrictamente a las especificaciones. Rechace cualquier entrada que no se adapte de forma estricta a las especificaciones, o cambielas por algo que s\u00ED lo haga. No conf\u00EDe exclusivamente en la b\u00FAsqueda de entradas maliciosas o malformadas (es decir, no conf\u00EDe en una lista de denegaci\u00F3n). Sin embargo, las listas de denegaci\u00F3n pueden ser \u00FAtiles para detectar posibles ataques o para determinar qu\u00E9 entradas est\u00E1n tan malformadas que deben ser rechazadas directamente.</p><p></p><p>Al realizar la validaci\u00F3n de entrada, usted debe considerar todas las propiedades potencialmente destacadas, incluida la longitud, el tipo de entrada, el rango completo de valores aceptables, las entradas faltantes o adicionales, la sintaxis, el sentido entre los campos que se encuentran relacionados y la conformidad con todas las reglas comerciales. Como ejemplo de l\u00F3gica de regla de negocio, \"barco\" puede ser sint\u00E1cticamente v\u00E1lido porque s\u00F3lo contiene caracteres alfanum\u00E9ricos, pero no es v\u00E1lido si se esperan colores como \"rojo\" o \"azul\".</p><p></p><p>Aseg\u00FArese de realizar la validaci\u00F3n de entradas en interfaces bien definidas dentro de la aplicaci\u00F3n. Esto ayudar\u00E1 a cuidar la aplicaci\u00F3n, incluso si un elemento se utiliza de nuevo o traslada a otro sitio.</p><p>\t</p>",
+					"otherinfo": "<p>Fuente URL: http://127.0.0.1:8080/vulnerabilities/xss_s/</p>",
+					"reference": "<p>https://owasp.org/www-community/attacks/xss/</p><p>https://cwe.mitre.org/data/definitions/79.html</p>",
+					"cweid": "79",
+					"wascid": "8",
+					"sourceid": "799"
+				},
+				{
+					"pluginid": "40018",
+					"alertRef": "40018",
+					"alert": "Inyecci\u00F3n SQL",
+					"name": "Inyecci\u00F3n SQL",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "Alto (Media)",
+					"desc": "<p>Inyecci\u00F3n SQL puede ser posible.</p>",
+					"instances":[ 
+						{
+							"id": "286",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/sqli_blind/?Submit=Submit&id=ZAP%27+AND+%271%27%3D%271%27+--+",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/sqli_blind\/ (Submit,id)",
+							"method": "GET",
+							"param": "id",
+							"attack": "ZAP' OR '1'='1' -- ",
+							"evidence": "",
+							"otherinfo": "Los resultados de la p\u00E1gina fueron manipulados con \u00E9xito utilizando las condiciones booleanas [ZAP' AND '1'='1' -- ] y [ZAP' OR '1'='1' -- ]. \nEl valor del par\u00E1metro modificado fue , que fue eliminado del HTML para facilitar la comparaci\u00F3n.\nNo se devolvieron datos para el par\u00E1metro original. \nLa vulnerabilidad se detect\u00F3 al recuperar con \u00E9xito m\u00E1s datos de los que se devolv\u00EDan originalmente, manipulando el par\u00E1metro."
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>No conf\u00EDe en los datos de entrada del lado del cliente, incluso si existe una validaci\u00F3n del lado del cliente.</p><p>Como norma general, escriba la verificaci\u00F3n de los datos en el lado del servidor.</p><p>Si la aplicaci\u00F3n usa JDBC, use PreparedStatement o CallableStatement, con par\u00E1metros pasados \u200B\u200Bpor '?'</p><p>Si la aplicaci\u00F3n usa ASP, use objetos de comando ADO con verificaci\u00F3n de tipo fuerte y consultas parametrizadas.</p><p>Si se pueden usar los procedimientos almacenados de la base de datos, util\u00EDcelos.</p><p>\u00A1*No* concatene cadenas en consultas en el procedimiento almacenado, o use 'exec', 'exex immediate' o una funci\u00F3n equivalente!</p><p>No cree consultas SQL din\u00E1micas mediante la concatenaci\u00F3n de cadenas simples.</p><p>Escape todos los datos recibidos del cliente.</p><p>Aplique una 'lista de permitidos' para caracteres permitidos o una 'lista de denegados' para caracteres no permitidos en la entrada del usuario.</p><p>Aplique el principio de privilegio m\u00EDnimo utilizando el usuario de base de datos con el menor privilegio posible.</p><p>En particular, evite utilizar usuarios de bases de datos 'sa' o 'db-owner'. Esto no elimina la inyecci\u00F3n SQL, pero minimiza su impacto.</p><p>Otorgue el acceso m\u00EDnimo a la base de datos que sea necesario para la aplicaci\u00F3n.</p>",
+					"otherinfo": "<p>Los resultados de la p\u00E1gina fueron manipulados con \u00E9xito utilizando las condiciones booleanas [ZAP' AND '1'='1' -- ] y [ZAP' OR '1'='1' -- ]. </p><p>El valor del par\u00E1metro modificado fue , que fue eliminado del HTML para facilitar la comparaci\u00F3n.</p><p>No se devolvieron datos para el par\u00E1metro original. </p><p>La vulnerabilidad se detect\u00F3 al recuperar con \u00E9xito m\u00E1s datos de los que se devolv\u00EDan originalmente, manipulando el par\u00E1metro.</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html</p>",
+					"cweid": "89",
+					"wascid": "19",
+					"sourceid": "901"
+				},
+				{
+					"pluginid": "40018",
+					"alertRef": "40018",
+					"alert": "Inyecci\u00F3n SQL - MySQL",
+					"name": "Inyecci\u00F3n SQL - MySQL",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "Alto (Media)",
+					"desc": "<p>Inyecci\u00F3n SQL puede ser posible.</p>",
+					"instances":[ 
+						{
+							"id": "287",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/sqli/?Submit=Submit&id=%27",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/sqli\/ (Submit,id)",
+							"method": "GET",
+							"param": "id",
+							"attack": "'",
+							"evidence": "You have an error in your SQL syntax",
+							"otherinfo": "El RDBMS probablemente es [MySQL], dado que el mensaje de error coincide con la expresi\u00F3n regular [\\QYou have an error in your SQL syntax\\E] en los resultados HTML. \nLa vulnerabilidad se detect\u00F3 manipulando el par\u00E1metro para provocar un mensaje de error de base de datos que fue devuelto y reconocido."
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>No conf\u00EDe en los datos de entrada del lado del cliente, incluso si existe una validaci\u00F3n del lado del cliente.</p><p>Como norma general, escriba la verificaci\u00F3n de los datos en el lado del servidor.</p><p>Si la aplicaci\u00F3n usa JDBC, use PreparedStatement o CallableStatement, con par\u00E1metros pasados \u200B\u200Bpor '?'</p><p>Si la aplicaci\u00F3n usa ASP, use objetos de comando ADO con verificaci\u00F3n de tipo fuerte y consultas parametrizadas.</p><p>Si se pueden usar los procedimientos almacenados de la base de datos, util\u00EDcelos.</p><p>\u00A1*No* concatene cadenas en consultas en el procedimiento almacenado, o use 'exec', 'exex immediate' o una funci\u00F3n equivalente!</p><p>No cree consultas SQL din\u00E1micas mediante la concatenaci\u00F3n de cadenas simples.</p><p>Escape todos los datos recibidos del cliente.</p><p>Aplique una 'lista de permitidos' para caracteres permitidos o una 'lista de denegados' para caracteres no permitidos en la entrada del usuario.</p><p>Aplique el principio de privilegio m\u00EDnimo utilizando el usuario de base de datos con el menor privilegio posible.</p><p>En particular, evite utilizar usuarios de bases de datos 'sa' o 'db-owner'. Esto no elimina la inyecci\u00F3n SQL, pero minimiza su impacto.</p><p>Otorgue el acceso m\u00EDnimo a la base de datos que sea necesario para la aplicaci\u00F3n.</p>",
+					"otherinfo": "<p>El RDBMS probablemente es [MySQL], dado que el mensaje de error coincide con la expresi\u00F3n regular [\\QYou have an error in your SQL syntax\\E] en los resultados HTML. </p><p>La vulnerabilidad se detect\u00F3 manipulando el par\u00E1metro para provocar un mensaje de error de base de datos que fue devuelto y reconocido.</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html</p>",
+					"cweid": "89",
+					"wascid": "19",
+					"sourceid": "926"
+				},
+				{
+					"pluginid": "90020",
+					"alertRef": "90020",
+					"alert": "Remote OS Command Injection (Inyecci\u00F3n Remota de Comandos del Sistema Operativo)",
+					"name": "Remote OS Command Injection (Inyecci\u00F3n Remota de Comandos del Sistema Operativo)",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "Alto (Media)",
+					"desc": "<p>T\u00E9cnica de ataque utilizada para la ejecuci\u00F3n no autorizada de comandos del sistema operativo. Este ataque es posible cuando una aplicaci\u00F3n acepta datos de entrada que no son de confianza para crear comandos del sistema operativo de manera insegura, lo que implica que tiene un filtro de datos inadecuado y/o una llamada incorrecta de programas externos.</p>",
+					"instances":[ 
+						{
+							"id": "288",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/exec/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/exec\/ ()(Submit,ip)",
+							"method": "POST",
+							"param": "ip",
+							"attack": "ZAP&cat /etc/passwd&",
+							"evidence": "root:x:0:0",
+							"otherinfo": "The scan rule was able to retrieve the content of a file or command by sending [ZAP&cat /etc/passwd&] to the operating system running this application."
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Si es posible, utilice las llamadas de la biblioteca en lugar de los procesos que son externos para poder recrear la funionalidad que es deseada.</p><p></p><p>Ejecute su c\u00F3digo en un dominio de \"c\u00E1rcel\" o un dominio que sea similar el cual imponga los l\u00EDmites estrictos entre el proceso y el sistema operativo. Esto puede ser que restrinja de forma efectiva a qu\u00E9 archivos se pueden ingresar en un directorio particular o qu\u00E9 comandos puede utilizar su software.</p><p></p><p>Los ejemplos de niveles de sistema operativo incluyen el Unix chroot jail, AppArmor, and SELinux. Normalmente, el c\u00F3digo proporcionado puede otorgar cierta protecci\u00F3n. Por ejemplo, java.io.FilePermission en Java SecurityManager le permite especificar las restricciones en las operaciones de archivos.</p><p>Esto puede que no sea la soluci\u00F3n viable, y solo limita el impacto al sistema operativo; el resto de tu aplicaci\u00F3n puede estar expuesta.</p><p></p><p>Por cualquier dato que se pudiera haber utilizado para originar un comando que se ejecutar\u00E1, mantenga la mayor cantidad de datos que no se encuentren bajo el control externo tanto como sea posible. Por ejemplo, en las aplicaciones web, esto puede necesitar almacenar el comando localmente en el estado de la sesi\u00F3n en vez de tener que enviarlo al cliente en un campo de formulario oculto.</p><p></p><p>Utilice una biblioteca o marco que haya sido comprobado que no pueda permitir que suceda esta debilidad o que otorgue contrucciones que hagan que esta debilidad sea m\u00E1s facil de prevenir.</p><p></p><p>Por ejemplo, considere utilizar el control de codificaci\u00F3n ESAPI o un instrumento, biblioteca o marco parecido. Esto podr\u00E1 ayudar al programador a codificar todas las salidas de una forma menos propensa a sufrir una falla.</p><p></p><p>Si tu necesitas utilizar las cadenas de consulta que fueron generadas de forma din\u00E1mica o los a pesar del riesgo, cite los agumentos de forma adecuada y escape de cualquier car\u00E1cter que sea especial dentro de esos argumentos. El enfoque m\u00E1s conservador es escapar o filtrar todos los caracteres que no pasen una lista permitida extremadamente estricta (como todo lo que no sea alfanum\u00E9rico o espacio en blanco). Si todav\u00EDa se requieren de algunos caracteres que sean especiales, como espacios en blanco, modifique cada argumento entre comillas y luego del paso de escape/filtado. Tenga cuidado con la inyecci\u00F3n de los argumentos.</p><p></p><p>Si el programa que se va a ejecutar permite poder especificar los argumentos dentro de un archivo de entrada o desde una entrada que sea est\u00E1ndar, entonces usted puede considerar utilizar ese modo para poder pasar los argumentos en lugar de la l\u00EDnea de comandos.</p><p></p><p>Si se encuentra disponible, utilice los mecanismos estructurados que apliquen de forma autom\u00E1tica la separaci\u00F3n entre los datos y c\u00F3digos. Estos mecanismos pueden otorgar la cotizaci\u00F3n, codificaci\u00F3n y validaci\u00F3n relevantes de manera autom\u00E1tica, en lugar de confiar en que el desarrollador proporcione esta capacidad en cada uno de los puntos donde se origina la salida.</p><p></p><p>Algunos lenguajes pueden ofrecer varias funciones que se pueden utilizar para poder invocar los comandos. Donde sea posible, usted tiene que identificar cualquier funci\u00F3n que pueda invocar un shell de comandos utilizando una sola cadena, y modifique con una funci\u00F3n que necesite argumentos que sean individuales. Estas funciones normalmente realizan citas y filtros de los agumentos que son apropiados. Por ejemplo, en C, la funci\u00F3n del sistema () puede aceptar una cadena que contenga el comando completo para poder ejecutarse, mientras que en execl (), execve () y otros necesitan una matriz de cadenas, una para cada uno de los argumentos. En Windows, CreateProcess () solo puede aceptar un comando a la vez. En Perl, si syste () se facilita con una matriz de argumentos, esta citar\u00E1 cada uno de los argumentos.</p><p></p><p>Asuma que toda la entrada es maliciosa. Utilizar una estrategia de validaci\u00F3n de entradas de tipo \"aceptar lo bueno conocido\", es decir, utilizar una lista de entradas aceptables que se ajusten estrictamente a las especificaciones. Rechace cualquier entrada que no se adapte de forma estricta a las especificaciones, o cambielas por algo que s\u00ED lo haga. No conf\u00EDe exclusivamente en la b\u00FAsqueda de entradas maliciosas o malformadas (es decir, no conf\u00EDe en una lista de denegaci\u00F3n). Sin embargo, las listas de denegaci\u00F3n pueden ser \u00FAtiles para detectar posibles ataques o para determinar qu\u00E9 entradas est\u00E1n tan malformadas que deben ser rechazadas directamente.</p><p></p><p>Al realizar la validaci\u00F3n de entrada, usted debe considerar todas las propiedades potencialmente destacadas, incluida la longitud, el tipo de entrada, el rango completo de valores aceptables, las entradas faltantes o adicionales, la sintaxis, el sentido entre los campos que se encuentran relacionados y la conformidad con todas las reglas comerciales. Como ejemplo de l\u00F3gica de regla de negocio, \"barco\" puede ser sint\u00E1cticamente v\u00E1lido porque s\u00F3lo contiene caracteres alfanum\u00E9ricos, pero no es v\u00E1lido si se esperan colores como \"rojo\" o \"azul\".</p><p></p><p>Cuando construya cadenas de comandos del SO, utilice listas de permisos estrictas que limiten el conjunto de caracteres en funci\u00F3n del valor esperado del par\u00E1metro en la solicitud. Esto va a limitar de forma indirecta el alcance de un ataque, pero esta t\u00E9cnica no es tan importante como la codificaci\u00F3n de la salida de forma adecuada y el escape.</p><p></p><p>Usted tiene que tener en cuenta que la codificaci\u00F3n de la salida de forma adecuada, el escape y las comillas son la soluci\u00F3n m\u00E1s efectiva para poder prevenir la inyecci\u00F3n de los comandos del sistema operativo, aunque la validaci\u00F3n de las entradas pueden facilitar cierta defensa en profundidad. Esto se origina ya que se limita de forma muy efectiva lo que aparecer\u00E1 en la salida. La validaci\u00F3n de la entrada no siempre podr\u00E1 evitar la inyecci\u00F3n de los comandos del sistema operativo, en especial si se necesita que admita los campos de texto de forma libre que pueden ser que contengan caracteres arbitrarios. Por ejemplo, al invocar un programa de correo, es muy probable que deba permitir que el campo del asunto contenga entrdas muy peligrosas como por ejemplo \",\" y caracteres \">\", que se deber\u00EDan escapar o ser manjeados de otra forma distinta. En este caso, quitar el car\u00E1cter podr\u00EDa minimizar el riesgo de inyecci\u00F3n del comando del SO, pero esto generar\u00EDa un comportamiento incorrecto porque el campo del asunto no se podr\u00EDa grabar como el usuario deseaba. Esto podr\u00EDa parecer un peque\u00F1o inconveniente, pero podr\u00EDa ser m\u00E1s importante cuando el programa se basa en l\u00EDneas de asunto que son bien estructuradas para poder pasar mensajes a otros componentes.</p><p></p><p>Incluso si se comete un error en su validaci\u00F3n (como por ejemplo olvidar uno de cada 100 campos de entrada), es muy probable que la codificaci\u00F3n de forma correcta lo proteja de los ataques que se basan en las inyecciones. Siempre que no se realice de una forma aislada, la validaci\u00F3n de la entrada continuar\u00E1 siendo una t\u00E9cnica muy eficaz, ya que puede minimizar de forma significativa su superficie de ataque, permitiendole detectar algunos ataques y proporcionar otros beneficios de seguridad distintos a los que la codificaci\u00F3n adecuada no puede solucionar.</p>",
+					"otherinfo": "<p>The scan rule was able to retrieve the content of a file or command by sending [ZAP&cat /etc/passwd&] to the operating system running this application.</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/78.html</p><p>https://owasp.org/www-community/attacks/Command_Injection</p>",
+					"cweid": "78",
+					"wascid": "31",
+					"sourceid": "1508"
+				},
+				{
+					"pluginid": "6",
+					"alertRef": "6-2",
+					"alert": "Ruta Transversal",
+					"name": "Ruta Transversal",
+					"riskcode": "3",
+					"confidence": "2",
+					"riskdesc": "Alto (Media)",
+					"desc": "<p>La t\u00E9cnica de ataque Path Traversal permite a un atacante acceder a los archivos, directorios y comandos que potencialmente residen fuera del directorio ra\u00EDz de documentos web. Un atacante puede controlar una URL de tal forma que el sitio web ejecutar\u00E1 o mostrar\u00E1 la informaci\u00F3n de los archivos que son arbitrarios en cualquier parte del servidor web. Cualquier dispositivo que se exponga a una interfaz que se basa en HTTP es potencialmente vulnerable a un Path Traversal.</p><p></p><p>La mayoria de los sitios web proh\u00EDben el acceso de los usuarios a alg\u00FAn sitio espec\u00EDfico del sistema de los archivos, normalmente denominado directorio \"ra\u00EDz del documento web\" o \"ra\u00EDz CGI\". Estos directorios poseen los archivos que estan destinados al acceso del usuario y el ejecutable que es necesario para poder controlar la funcionalidad correcta de la aplicaci\u00F3n web. Para poder ingresar a los archivos o activar los comandos en cualquier zona del sistema de los archivos, los ataquesde trayectoria de rutas van a utilizar la capacidad de las secuencias de todos los caracteres especiales.</p><p></p><p>El ataque Path Traversal m\u00E1s elemental utiliza la secuencia de los caracteres especiales \"../\" para poder modificar la ubicaci\u00F3n del recurso que es requerido en la URL. Aunque la gran mayor\u00EDa de los servidores web que son populares van a evitar que esta t\u00E9cnica se escape de la ra\u00EDz del documento web, las codificaciones que son alternativas de la secuencia \"../\" pueden impedir los filtros de seguridad. Estas variaciones del m\u00E9todo incluyen la codificaci\u00F3n Unicode v\u00E1lida y no v\u00E1lida (\"..%u2216\" o \"..%c0%af\") del car\u00E1cter de la barra oblicua, los caracteres de la barra invertida (\"..\\\") en los servidores basados en Windows, los caracteres codificados de la URL \"%2e%2e%2f\"), y la codificaci\u00F3n doble de la URL  (\"..%255c\") del car\u00E1cter de la barra invertida.</p><p></p><p>Inclusive si el servidor web impide de forma correcta los intentos de trayectoria en la ruta de la URL, una aplicaci\u00F3n web en s\u00ED misma puede ser muy vulnerable provocado por el manejo de forma incorrecta de la entrada que fue proporcionada por el usuario. Este es un problema muy com\u00FAn de las aplicaciones web que utilizan los mecanismos de plantilla o cargan alg\u00FAn texto est\u00E1tico de los archivos. En las variaciones de los ataques, el valor del par\u00E1metro de la URL original se modifica por el nombrede uno de los archivos de \u00F3rdenes din\u00E1micos de la aplicaci\u00F3n web. Provocando que, los resultados puedan mostrar el c\u00F3digo fuente porque el archivo se interpreta como un texto en vez de como un archivo de \u00F3rdenes ejecutable. Estas t\u00E9cnicas suelen emplear caracteres especiales adicionales, como el punto (\".\") para revelar el listado del directorio de trabajo actual, o los caracteres NULL \"%00\" para saltarse las comprobaciones rudimentarias de la extensi\u00F3n de los archivos.</p>",
+					"instances":[ 
+						{
+							"id": "277",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/fi/?page=%2Fetc%2Fpasswd",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/fi\/ (page)",
+							"method": "GET",
+							"param": "page",
+							"attack": "/etc/passwd",
+							"evidence": "root:x:0:0",
+							"otherinfo": ""
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Asuma que toda la entrada es maliciosa. Utilizar una estrategia de validaci\u00F3n de entradas de tipo \"aceptar lo bueno conocido\", es decir, utilizar una lista de entradas aceptables que se ajusten estrictamente a las especificaciones. Rechace cualquier entrada que no se adapte de forma estricta a las especificaciones, o cambielas por algo que s\u00ED lo haga. No conf\u00EDe exclusivamente en la b\u00FAsqueda de entradas maliciosas o malformadas (es decir, no conf\u00EDe en una lista de denegaci\u00F3n). Sin embargo, las listas de denegaci\u00F3n pueden ser \u00FAtiles para detectar posibles ataques o para determinar qu\u00E9 entradas est\u00E1n tan malformadas que deben ser rechazadas directamente.</p><p></p><p>Al realizar la validaci\u00F3n de entrada, usted debe considerar todas las propiedades potencialmente destacadas, incluida la longitud, el tipo de entrada, el rango completo de valores aceptables, las entradas faltantes o adicionales, la sintaxis, el sentido entre los campos que se encuentran relacionados y la conformidad con todas las reglas comerciales. Como ejemplo de l\u00F3gica de regla de negocio, \"barco\" puede ser sint\u00E1cticamente v\u00E1lido porque s\u00F3lo contiene caracteres alfanum\u00E9ricos, pero no es v\u00E1lido si se esperan colores como \"rojo\" o \"azul\".</p><p></p><p>Para los nombres de archivo, utilice listas de permisos estrictas que limiten el conjunto de caracteres a utilizar. Si es posible, solo permita un solo car\u00E1cter \".\" en el nombre del archivo para poder prevenir las vulnerabilidades y rechazar los separadores de directorios como por ejemplo \"/\". Utilice una lista de extensiones de archivo permitidas.</p><p></p><p>Advertencia: si usted intenta limpiar sus datos, tiene que hacerlo para que el resultado final no est\u00E9 en la forma en el que estos puedan ser un peligro. Un mecanismo para desinfectar puede provcar la eliminaci\u00F3n de caracteres como por ejemplo \".\" y \";\" que pueden ser necesitados para varias explociones. Un atacante puede intentar burlar al mecanismo de desinfecci\u00F3n para que este \"limpie\" los datos de una forma que puede ser muy peligrosa. Supongamos que el atacante logra inyectar un \".\" dentro de un nombre de un archivo (por ejemplo, \"archivo sensi.tive\") y el mecanismo que se encarga de desinfectar elimina el car\u00E1cter que da como resultado que el nombre del archivo v\u00E1lido sea, \"archivo sensible\". Si ahora suponemos que los datos de entrada son seguros, entonces el archivo tiene la posibilidad de verse comprometido. </p><p></p><p>Las entradas se deben decodificar y canonicalizar a la representaci\u00F3n que se encuentra actualmente de manera interna de la aplicaci\u00F3n antes de validarlas. Aseg\u00FArese de que su aplicaci\u00F3n no pueda descodificar la misma entrada dos veces. Estos errores podr\u00EDan utilizarse para eludir los esquemas de listas de permitidos introduciendo entradas peligrosas despu\u00E9s de haberlas comprobado.</p><p></p><p>Utilice alguna funci\u00F3n de canonicalizaci\u00F3n de una ruta que fue incorporada (como realpath() en C) la cual origina la versi\u00F3n can\u00F3nica de la ruta de acceso, que produce la eliminaci\u00F3n de forma efectiva de las secuencias \"..\" y los enlaces que son simb\u00F3licos.</p><p></p><p>Ejecute su codigo utilizando los privilegios m\u00E1s bajos que se necesitan para poder realizar todas las tareas que son necesarias. Si es posible, cree unas cuentas que se encuentren aisladas con provilegios limitados que solo se utilizan para una sola tarea. De esta forma, un ataque que sea exitoso no le proporcionar\u00E1 al atacante el acceso de forma inmediata al resto del software o su dominio. Por ejemplo, las aplicaciones de las bases de datos muy pocas veces requieren ejecutarse como el administrador de la base de datos, en especial en las operaciones que son cotidianas.</p><p></p><p>Cuando el grupo de los objetos que son aceptados, como nombre de los archivos o URL, es limitado o conocido, tiene que crear una asignaci\u00F3n de un grupo de valores de entradas que son fijos (como ID num\u00E9ricos) a los nombres de los archivos o URL que son reales, y adem\u00E1s tiene que rechazar todas las otras entradas.</p><p></p><p>Ejecute su c\u00F3digo en un dominio de \"c\u00E1rcel\" o un dominio que sea similar el cual imponga los l\u00EDmites estrictos entre el proceso y el sistema operativo. Esto puede ser que restrinja de forma efectiva a qu\u00E9 archivos se pueden ingresar en un directorio particular o qu\u00E9 comandos puede utilizar su software.</p><p></p><p>Los ejemplos de niveles de sistema operativo incluyen el Unix chroot jail, AppArmor, and SELinux. Normalmente, el c\u00F3digo proporcionado puede otorgar cierta protecci\u00F3n. Por ejemplo, java.io.FilePermission en Java SecurityManager le permite especificar las restricciones en las operaciones de archivos.</p><p></p><p>Esto puede que no sea la soluci\u00F3n viable, y solo limita el impacto al sistema operativo; el resto de tu aplicaci\u00F3n puede estar expuesta.</p><p></p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-community/attacks/Path_Traversal</p><p>https://cwe.mitre.org/data/definitions/22.html</p>",
+					"cweid": "22",
+					"wascid": "33",
+					"sourceid": "254"
+				},
+				{
+					"pluginid": "10202",
+					"alertRef": "10202",
+					"alert": "Ausencia de Tokens Anti-CSRF",
+					"name": "Ausencia de Tokens Anti-CSRF",
+					"riskcode": "2",
+					"confidence": "1",
+					"riskdesc": "Medio (Baja)",
+					"desc": "<p>No se encontraron tokens Anti-CSRF en formulario de env\u00EDo HTML.</p><p>Una solicutud falsa entre sitios en un ataque que compromete y obliga a una v\u00EDctima a enviar su solicitud HTTP a un destino objetivo sin su conocimiento o intenci\u00F3n para poder realizar una acci\u00F3n como v\u00EDctima. La causa oculta es la funcionalidad de la aplicaci\u00F3n utilizando acciones de URL/formulario que pueden ser adivinados de forma repetible. La naturaleza del ataque es que CSRG explota la confianza que un sitio web proporciona a un usuario. Por el contrario, las cadenas de comandos de los sitios cruzados (XSS) explotan la confianza que un usuario proporciona en un sitio web. Al igual que XSS, los ataques CSRG no son de forma necesaria de sitios cruzados, pero hay la posibilidad de que si pueden serlo. La falsificaci\u00F3n de las solicitudes ente los sitios tambi\u00E9n se conoce como CSRF, XSRG, ataques con un solo clic, montaje de sesi\u00F3n, diputado confundido y navegaci\u00F3n en alta mar.</p><p></p><p>Los ataques de CSRG son muy efectivos en varias situaciones, que incluyen:</p><p>*La victima tiene una sesi\u00F3n activa en el sitio de destino.</p><p>    *La v\u00EDctima se autoriza por medio de la autenticaci\u00F3n HTTP en el sitio de destino.</p><p>    *La v\u00EDctima se encuentra en la misma red local que el sitio de destino.</p><p></p><p>CSRF se ha utilizado especialmente para poder realizar una acci\u00F3n contra un sitio objetivo utilizando los privilegios de la v\u00EDctima, pero se han revelado t\u00E9cnicas recientes para difundir informaci\u00F3n al obtener el acceso a la respuesta. El riesgo de divulgaci\u00F3n de informaci\u00F3n aumenta de forma dr\u00E1stica cuando el sitio de destino se encuentra vulnerable a XSS, porque XSS se puede utilizar como una plataforma para CSRF, lo que le permite al atacante que opere desde adentro de los l\u00EDites de la misma pol\u00EDtica de origen.</p>",
+					"instances":[ 
+						{
+							"id": "38",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/exec/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/exec\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form name=\"ping\" action=\"#\" method=\"post\">",
+							"otherinfo": "No se ha encontrado ning\u00FAn token Anti-CSRF [user_token, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken, anticsrf] conocido en el siguiente formulario HTML: [Form 1: \"ip\" \"Submit\" ]."
+						},
+						{
+							"id": "39",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form name=\"low_js\" method=\"post\">",
+							"otherinfo": "No se ha encontrado ning\u00FAn token Anti-CSRF [user_token, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken, anticsrf] conocido en el siguiente formulario HTML: [Form 1: \"phrase\" \"send\" \"token\" ]."
+						},
+						{
+							"id": "72",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/upload/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/upload\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form enctype=\"multipart/form-data\" action=\"#\" method=\"POST\">",
+							"otherinfo": "No se ha encontrado ning\u00FAn token Anti-CSRF [user_token, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken, anticsrf] conocido en el siguiente formulario HTML: [Form 1: \"MAX_FILE_SIZE\" \"Upload\" \"uploaded\" ]."
+						},
+						{
+							"id": "83",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/weak_id/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/weak_id\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<form method=\"post\">",
+							"otherinfo": "No se ha encontrado ning\u00FAn token Anti-CSRF [user_token, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken, anticsrf] conocido en el siguiente formulario HTML: [Form 1: \"\" ]."
+						},
+						{
+							"id": "154",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/exec/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/exec\/ ()(Submit,ip)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "<form name=\"ping\" action=\"#\" method=\"post\">",
+							"otherinfo": "No se ha encontrado ning\u00FAn token Anti-CSRF [user_token, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken, anticsrf] conocido en el siguiente formulario HTML: [Form 1: \"ip\" \"Submit\" ]."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Fase: Arquitectura y Dise\u00F1o</p><p>Utilizar una biblioteca o framework verificado y confiable que evite esta vulnerabilidad o proporcione elementos que faciliten evitarla.</p><p>Por ejemplo, utilice el paquete anti-CSRG como el CSRGuard de OWASP.</p><p></p><p>Fase: Implementaci\u00F3n</p><p>Aseg\u00FArese de que su aplicaci\u00F3n est\u00E9 libre de fallas de secuencias de comandos entre sitios, ya que la mayor\u00EDa de las defensas de CSRF pueden detenerse por alto por medio del uso de secuencias de comandos manejadas por el atacante.</p><p></p><p>Fase: Arquitectura y Dise\u00F1o</p><p>Origina un nonce \u00FAnico para cada uno de los formularios, coloque el nonce en el formularo y confirme la independencia al obtener el formulario. Aseg\u00FArese de que el nonce no sea predecible (CWE-330).</p><p>Usted tiene que tener en cuenta que esto puede pasar desapercibido utilizando XSS.</p><p></p><p>Identificar las operaciones que sean especialmente peligrosas. Cuando el usuario desarrolla una operaci\u00F3n peligrosa, env\u00EDe una solicitud de confirmaci\u00F3n de forma separada para poder garantizar que el usuario tenga la intenci\u00F3n de desarrollar esa operaci\u00F3n.</p><p>Usted tiene que tener en cuenta que esto puede pasar desapercibido utilizando XSS.</p><p></p><p>Utilice el control de gesti\u00F3n de la sesi\u00F3n de ESAPI.</p><p>Este control introduce un elemento para CSRF.</p><p></p><p>No utilice el m\u00E9todo GET para ninguna de las solicitudes que puedan desencadenar un cambio de estado.</p><p></p><p>Fase: Implementaci\u00F3n</p><p>Revise que la solicitud se cre\u00F3 en la p\u00E1gina esperada. Esto podr\u00EDa quebrar la funcionalidad aut\u00E9ntica, ya que los usuarios o los representantes puede ser que hayan desactivado el env\u00EDo de Referer por motivos de privacidad.</p>",
+					"otherinfo": "<p>No se ha encontrado ning\u00FAn token Anti-CSRF [user_token, CSRFToken, __RequestVerificationToken, csrfmiddlewaretoken, authenticity_token, OWASP_CSRFTOKEN, anoncsrf, csrf_token, _csrf, _csrfSecret, __csrf_magic, CSRF, _token, _csrf_token, _csrfToken, anticsrf] conocido en el siguiente formulario HTML: [Form 1: \"ip\" \"Submit\" ].</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html</p><p>https://cwe.mitre.org/data/definitions/352.html</p>",
+					"cweid": "352",
+					"wascid": "9",
+					"sourceid": "36"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-4",
+					"alert": "CSP: Directiva Wildcard",
+					"name": "CSP: Directiva Wildcard",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medio (Alta)",
+					"desc": "<p>Content Security Policy (CSP) es una capa de seguridad a\u00F1adida que ayuda a detectar y mitigar ciertos tipos de ataques. Incluyendo (pero no limitado a) Cross Site Scripting (XSS), y ataques de inyecci\u00F3n de datos. Estos ataques se utilizan, para todo, desde el robo de datos a la desfiguraci\u00F3n de sitios o la distribuci\u00F3n de malware. CSP proporciona un conjunto de cabeceras HTTP est\u00E1ndar que permiten a los propietarios de sitios web declarar las fuentes de contenido aprobadas que los navegadores deber\u00EDan poder cargar en esa p\u00E1gina. Los tipos cubiertos son JavaScript, CSS, marcos HTML, fuentes, im\u00E1genes y objetos incrustables como applets Java, ActiveX y archivos de audio y v\u00EDdeo.</p>",
+					"instances":[ 
+						{
+							"id": "191",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ;",
+							"otherinfo": "Las siguientes directivas permiten fuentes comod\u00EDn (o ancestros), no est\u00E1n definidas, o est\u00E1n definidas de forma demasiado amplia:\nstyle-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src"
+						},
+						{
+							"id": "221",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/ ()(include)",
+							"method": "POST",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ;",
+							"otherinfo": "Las siguientes directivas permiten fuentes comod\u00EDn (o ancestros), no est\u00E1n definidas, o est\u00E1n definidas de forma demasiado amplia:\nstyle-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Aseg\u00FArese de que su servidor web, servidor de aplicaci\u00F3n, balanceador de carga, etc. est\u00E1 configurado apropiadamente para establecer la cabecera de Pol\u00EDtica de Seguridad de Contenido.</p>",
+					"otherinfo": "<p>Las siguientes directivas permiten fuentes comod\u00EDn (o ancestros), no est\u00E1n definidas, o est\u00E1n definidas de forma demasiado amplia:</p><p>style-src, img-src, connect-src, frame-src, font-src, media-src, object-src, manifest-src</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "96"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-13",
+					"alert": "CSP: Failure to Define Directive with No Fallback",
+					"name": "CSP: Failure to Define Directive with No Fallback",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medio (Alta)",
+					"desc": "<p>The Content Security Policy fails to define one of the directives that has no fallback. Missing/excluding them is the same as allowing anything.</p>",
+					"instances":[ 
+						{
+							"id": "178",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ;",
+							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
+						},
+						{
+							"id": "210",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/ ()(include)",
+							"method": "POST",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ;",
+							"otherinfo": "The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src."
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Aseg\u00FArese de que su servidor web, servidor de aplicaci\u00F3n, balanceador de carga, etc. est\u00E1 configurado apropiadamente para establecer la cabecera de Pol\u00EDtica de Seguridad de Contenido.</p>",
+					"otherinfo": "<p>The directive(s): frame-ancestors, form-action is/are among the directives that do not fallback to default-src.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "96"
+				},
+				{
+					"pluginid": "10055",
+					"alertRef": "10055-6",
+					"alert": "CSP: style-src unsafe-inline",
+					"name": "CSP: style-src unsafe-inline",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medio (Alta)",
+					"desc": "<p>Content Security Policy (CSP) es una capa de seguridad a\u00F1adida que ayuda a detectar y mitigar ciertos tipos de ataques. Incluyendo (pero no limitado a) Cross Site Scripting (XSS), y ataques de inyecci\u00F3n de datos. Estos ataques se utilizan, para todo, desde el robo de datos a la desfiguraci\u00F3n de sitios o la distribuci\u00F3n de malware. CSP proporciona un conjunto de cabeceras HTTP est\u00E1ndar que permiten a los propietarios de sitios web declarar las fuentes de contenido aprobadas que los navegadores deber\u00EDan poder cargar en esa p\u00E1gina. Los tipos cubiertos son JavaScript, CSS, marcos HTML, fuentes, im\u00E1genes y objetos incrustables como applets Java, ActiveX y archivos de audio y v\u00EDdeo.</p>",
+					"instances":[ 
+						{
+							"id": "201",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/",
+							"method": "GET",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ;",
+							"otherinfo": "style-src incluye unsafe-inline."
+						},
+						{
+							"id": "233",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/ ()(include)",
+							"method": "POST",
+							"param": "Content-Security-Policy",
+							"attack": "",
+							"evidence": "script-src 'self' https://pastebin.com  example.com code.jquery.com https://ssl.google-analytics.com ;",
+							"otherinfo": "style-src incluye unsafe-inline."
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Aseg\u00FArese de que su servidor web, servidor de aplicaci\u00F3n, balanceador de carga, etc. est\u00E1 configurado apropiadamente para establecer la cabecera de Pol\u00EDtica de Seguridad de Contenido.</p>",
+					"otherinfo": "<p>style-src incluye unsafe-inline.</p>",
+					"reference": "<p>https://www.w3.org/TR/CSP/</p><p>https://caniuse.com/#search=content+security+policy</p><p>https://content-security-policy.com/</p><p>https://github.com/HtmlUnit/htmlunit-csp</p><p>https://web.dev/articles/csp#resource-options</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "96"
+				},
+				{
+					"pluginid": "10038",
+					"alertRef": "10038-1",
+					"alert": "Cabecera Content Security Policy (CSP) no configurada",
+					"name": "Cabecera Content Security Policy (CSP) no configurada",
+					"riskcode": "2",
+					"confidence": "3",
+					"riskdesc": "Medio (Alta)",
+					"desc": "<p>La Pol\u00EDtica de seguridad de contenido (CSP) es una capa adicional de seguridad que ayuda a detectar y mitigar ciertos tipos de ataques, incluidos Cross Site Scripting (XSS) y ataques de inyecci\u00F3n de datos. Estos ataques se utilizan para todo, desde el robo de datos hasta la desfiguraci\u00F3n del sitio o la distribuci\u00F3n de malware. CSP proporciona un conjunto de encabezados HTTP est\u00E1ndar que permiten a los propietarios de sitios web declarar fuentes de contenido aprobadas que los navegadores deber\u00EDan poder cargar en esa p\u00E1gina; los tipos cubiertos son JavaScript, CSS, marcos HTML, fuentes, im\u00E1genes y objetos incrustados como applets de Java, ActiveX, archivos de audio y video.</p>",
+					"instances":[ 
+						{
+							"id": "16",
+							"uri": "http://127.0.0.1:8080",
+							"nodeName": "http:\/\/127.0.0.1:8080",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "19",
+							"uri": "http://127.0.0.1:8080/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "17",
+							"uri": "http://127.0.0.1:8080/index.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "3",
+							"uri": "http://127.0.0.1:8080/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:8080\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "18",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/fi/?page=include.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/fi\/ (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Aseg\u00FArese de que su servidor web, servidor de aplicaciones, balanceador de carga, etc. est\u00E9 configurado para establecer la cabecera Content-Security-Policy.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP</p><p>https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html</p><p>https://www.w3.org/TR/CSP/</p><p>https://w3c.github.io/webappsec-csp/</p><p>https://web.dev/articles/csp</p><p>https://caniuse.com/#feat=contentsecuritypolicy</p><p>https://content-security-policy.com/</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "15"
+				},
+				{
+					"pluginid": "10020",
+					"alertRef": "10020-1",
+					"alert": "Falta de cabecera Anti-Clickjacking",
+					"name": "Falta de cabecera Anti-Clickjacking",
+					"riskcode": "2",
+					"confidence": "2",
+					"riskdesc": "Medio (Media)",
+					"desc": "<p>La respuesta no protege contra ataques de \"ClickJacking\". Debes incluir Content-Security-Policy con la directiva \"frame-ancestors\" o X-Frame-Options.</p>",
+					"instances":[ 
+						{
+							"id": "7",
+							"uri": "http://127.0.0.1:8080",
+							"nodeName": "http:\/\/127.0.0.1:8080",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "4",
+							"uri": "http://127.0.0.1:8080/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "6",
+							"uri": "http://127.0.0.1:8080/index.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/index.php",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "5",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/fi/?page=include.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/fi\/ (page)",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						},
+						{
+							"id": "12",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/sqli_blind/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/sqli_blind\/",
+							"method": "GET",
+							"param": "x-frame-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Los navegadores web modernos admiten las cabeceras HTTP Content-Security-Policy y X-Frame-Options. Aseg\u00FArese de que una de ellas est\u00E1 configurada en todas las p\u00E1ginas web devueltas por su sitio/aplicaci\u00F3n.</p><p>Si espera que la p\u00E1gina est\u00E9 enmarcada solo por p\u00E1ginas en su servidor (por ejemplo, si forma parte de un FRAMESET), utilice SAMEORIGIN; de lo contrario, si no espera que la p\u00E1gina est\u00E9 enmarcada, utilice DENY. Alternativamente, considere implementar la directiva \"frame-ancestors\" de la Pol\u00EDtica de Seguridad de Contenidos.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options</p>",
+					"cweid": "1021",
+					"wascid": "15",
+					"sourceid": "15"
+				},
+				{
+					"pluginid": "10010",
+					"alertRef": "10010",
+					"alert": "Cookie Sin Flag HttpOnly",
+					"name": "Cookie Sin Flag HttpOnly",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Bajo (Media)",
+					"desc": "<p>Se ha establecido una cookie sin el flag HttpOnly, lo que significa que JavaScript puede acceder a la cookie. Si un script malicioso puede ser ejecutado en esta p\u00E1gina, entonces la cookie ser\u00E1 accesible y puede ser transmitida a otro sitio. Si se trata de una cookie de sesi\u00F3n, el secuestro de sesi\u00F3n puede ser posible.</p>",
+					"instances":[ 
+						{
+							"id": "115",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "Set-Cookie: PHPSESSID",
+							"otherinfo": ""
+						},
+						{
+							"id": "119",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php",
+							"method": "GET",
+							"param": "security",
+							"attack": "",
+							"evidence": "Set-Cookie: security",
+							"otherinfo": ""
+						},
+						{
+							"id": "192",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/weak_id/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/weak_id\/",
+							"method": "POST",
+							"param": "dvwaSession",
+							"attack": "",
+							"evidence": "Set-Cookie: dvwaSession",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Aseg\u00FArese de que la flag HttpOnly est\u00E1 establecida para todas las cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://owasp.org/www-community/HttpOnly</p>",
+					"cweid": "1004",
+					"wascid": "13",
+					"sourceid": "78"
+				},
+				{
+					"pluginid": "10054",
+					"alertRef": "10054-1",
+					"alert": "Cookie sin el atributo SameSite",
+					"name": "Cookie sin el atributo SameSite",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Bajo (Media)",
+					"desc": "<p>Se ha establecido una cookie sin el atributo SameSite, lo que significa que la cookie puede ser enviada como resultado de una solicitud 'cross-site'. El atributo SameSite es una medida eficaz para contrarrestar la falsificaci\u00F3n de peticiones entre sitios, la inclusi\u00F3n de scripts entre sitios y los ataques de sincronizaci\u00F3n.</p>",
+					"instances":[ 
+						{
+							"id": "121",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "Set-Cookie: PHPSESSID",
+							"otherinfo": ""
+						},
+						{
+							"id": "125",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php",
+							"method": "GET",
+							"param": "security",
+							"attack": "",
+							"evidence": "Set-Cookie: security",
+							"otherinfo": ""
+						},
+						{
+							"id": "203",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/weak_id/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/weak_id\/",
+							"method": "POST",
+							"param": "dvwaSession",
+							"attack": "",
+							"evidence": "Set-Cookie: dvwaSession",
+							"otherinfo": ""
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Aseg\u00FArese que el atributo SameSite est\u00E1 establecido como 'lax' o idealmente 'strict' para todas las cookies.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-cookie-same-site</p>",
+					"cweid": "1275",
+					"wascid": "13",
+					"sourceid": "79"
+				},
+				{
+					"pluginid": "10023",
+					"alertRef": "10023",
+					"alert": "Divulgaci\u00F3n de Informaci\u00F3n - Mensajes de Error de Depuraci\u00F3n",
+					"name": "Divulgaci\u00F3n de Informaci\u00F3n - Mensajes de Error de Depuraci\u00F3n",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Bajo (Media)",
+					"desc": "<p>La respuesta parec\u00EDa contener mensajes de error comunes devueltos por plataformas como ASP.NET, y servidores Web como IIS y Apache. Puede configurar la lista de mensajes de depuraci\u00F3n comunes.</p>",
+					"instances":[ 
+						{
+							"id": "42",
+							"uri": "http://127.0.0.1:8080/instructions.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/instructions.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "PHP warning",
+							"otherinfo": ""
+						},
+						{
+							"id": "161",
+							"uri": "http://127.0.0.1:8080/instructions.php?doc=readme",
+							"nodeName": "http:\/\/127.0.0.1:8080\/instructions.php (doc)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "PHP warning",
+							"otherinfo": ""
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Desactivar los mensajes de depuraci\u00F3n antes de pasar a producci\u00F3n.</p>",
+					"otherinfo": "",
+					"reference": "",
+					"cweid": "1295",
+					"wascid": "13",
+					"sourceid": "40"
+				},
+				{
+					"pluginid": "10096",
+					"alertRef": "10096",
+					"alert": "Divulgaci\u00F3n de Marcas de Tiempo - Unix",
+					"name": "Divulgaci\u00F3n de Marcas de Tiempo - Unix",
+					"riskcode": "1",
+					"confidence": "1",
+					"riskdesc": "Bajo (Baja)",
+					"desc": "<p>Una marca de tiempo fue revelada por la aplicaci\u00F3n/servidor web. - Unix</p>",
+					"instances":[ 
+						{
+							"id": "51",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1732584193",
+							"otherinfo": "1732584193, que se eval\u00FAa como: 2024-11-25 19:23:13."
+						},
+						{
+							"id": "52",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1732584194",
+							"otherinfo": "1732584194, que se eval\u00FAa como: 2024-11-25 19:23:14."
+						},
+						{
+							"id": "53",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1770035416",
+							"otherinfo": "1770035416, que se eval\u00FAa como: 2026-02-02 06:30:16."
+						},
+						{
+							"id": "54",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1958414417",
+							"otherinfo": "1958414417, que se eval\u00FAa como: 2032-01-22 14:00:17."
+						},
+						{
+							"id": "55",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "1990404162",
+							"otherinfo": "1990404162, que se eval\u00FAa como: 2033-01-26 20:02:42."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Confirmar que los datos encontrados de informaci\u00F3n sobre la marca de tiempo no son sensibles, ni se pueden usar en patrones explotables de divulgaci\u00F3n.</p>",
+					"otherinfo": "<p>1732584193, que se eval\u00FAa como: 2024-11-25 19:23:13.</p>",
+					"reference": "<p>https://cwe.mitre.org/data/definitions/200.html</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "42"
+				},
+				{
+					"pluginid": "10036",
+					"alertRef": "10036-2",
+					"alert": "El servidor filtra informaci\u00F3n de versi\u00F3n a trav\u00E9s del campo \"Server\" del encabezado de respuesta HTTP",
+					"name": "El servidor filtra informaci\u00F3n de versi\u00F3n a trav\u00E9s del campo \"Server\" del encabezado de respuesta HTTP",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Bajo (Alta)",
+					"desc": "<p>El servidor web/aplicaci\u00F3n est\u00E1 filtrando informaci\u00F3n de versi\u00F3n a trav\u00E9s de la cabecera de respuesta HTTP \"Server\". El acceso a dicha informaci\u00F3n puede facilitar a los atacantes la identificaci\u00F3n de otras vulnerabilidades a las que est\u00E1 sujeto su servidor web/aplicaci\u00F3n.</p>",
+					"instances":[ 
+						{
+							"id": "27",
+							"uri": "http://127.0.0.1:8080/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25 (Debian)",
+							"otherinfo": ""
+						},
+						{
+							"id": "28",
+							"uri": "http://127.0.0.1:8080/index.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/index.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25 (Debian)",
+							"otherinfo": ""
+						},
+						{
+							"id": "14",
+							"uri": "http://127.0.0.1:8080/robots.txt",
+							"nodeName": "http:\/\/127.0.0.1:8080\/robots.txt",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25 (Debian)",
+							"otherinfo": ""
+						},
+						{
+							"id": "22",
+							"uri": "http://127.0.0.1:8080/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:8080\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25 (Debian)",
+							"otherinfo": ""
+						},
+						{
+							"id": "23",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/fi/?page=include.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/fi\/ (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25 (Debian)",
+							"otherinfo": ""
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Aseg\u00FArese de que su servidor web, servidor de aplicaciones, balanceador de carga, etc. est\u00E1 configurado para suprimir la cabecera \"Server\" o proporcionar detalles gen\u00E9ricos.</p>",
+					"otherinfo": "",
+					"reference": "<p>https://httpd.apache.org/docs/current/mod/core.html#servertokens</p><p>https://learn.microsoft.com/en-us/previous-versions/msp-n-p/ff648552(v=pandp.10)</p><p>https://www.troyhunt.com/shhh-dont-let-your-response-headers/</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "12"
+				},
+				{
+					"pluginid": "10021",
+					"alertRef": "10021",
+					"alert": "Falta encabezado X-Content-Type-Options",
+					"name": "Falta encabezado X-Content-Type-Options",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Bajo (Media)",
+					"desc": "<p>La cabecera Anti-MIME-Sniffing X-Content-Type-Options no se ha establecido en 'nosniff'. Esto permite que las versiones anteriores de Internet Explorer y Chrome realicen MIME-sniffing en el cuerpo de la respuesta, lo que puede provocar que el cuerpo d\u00E9 la respuesta se interprete y se muestre como un tipo de contenido distinto del tipo de contenido declarado. Las versiones actuales (principios de 2014) y heredadas de Firefox utilizar\u00E1n el tipo de contenido declarado (si se establece uno), en lugar de realizar MIME-sniffing.</p>",
+					"instances":[ 
+						{
+							"id": "41",
+							"uri": "http://127.0.0.1:8080",
+							"nodeName": "http:\/\/127.0.0.1:8080",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Este problema a\u00FAn se aplica a las p\u00E1ginas de tipo error (401, 403, 500, etc.), ya que esas p\u00E1ginas a menudo se ven afectadas por problemas de inyecci\u00F3n, en cuyo caso a\u00FAn existe la preocupaci\u00F3n de que los navegadores husmeen las p\u00E1ginas lejos de su tipo de contenido real.\nEn el umbral \u00ABAlto\u00BB esta regla de an\u00E1lisis no alertar\u00E1 sobre respuestas de error del cliente o servidor."
+						},
+						{
+							"id": "34",
+							"uri": "http://127.0.0.1:8080/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Este problema a\u00FAn se aplica a las p\u00E1ginas de tipo error (401, 403, 500, etc.), ya que esas p\u00E1ginas a menudo se ven afectadas por problemas de inyecci\u00F3n, en cuyo caso a\u00FAn existe la preocupaci\u00F3n de que los navegadores husmeen las p\u00E1ginas lejos de su tipo de contenido real.\nEn el umbral \u00ABAlto\u00BB esta regla de an\u00E1lisis no alertar\u00E1 sobre respuestas de error del cliente o servidor."
+						},
+						{
+							"id": "20",
+							"uri": "http://127.0.0.1:8080/robots.txt",
+							"nodeName": "http:\/\/127.0.0.1:8080\/robots.txt",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Este problema a\u00FAn se aplica a las p\u00E1ginas de tipo error (401, 403, 500, etc.), ya que esas p\u00E1ginas a menudo se ven afectadas por problemas de inyecci\u00F3n, en cuyo caso a\u00FAn existe la preocupaci\u00F3n de que los navegadores husmeen las p\u00E1ginas lejos de su tipo de contenido real.\nEn el umbral \u00ABAlto\u00BB esta regla de an\u00E1lisis no alertar\u00E1 sobre respuestas de error del cliente o servidor."
+						},
+						{
+							"id": "33",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/fi/?page=include.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/fi\/ (page)",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Este problema a\u00FAn se aplica a las p\u00E1ginas de tipo error (401, 403, 500, etc.), ya que esas p\u00E1ginas a menudo se ven afectadas por problemas de inyecci\u00F3n, en cuyo caso a\u00FAn existe la preocupaci\u00F3n de que los navegadores husmeen las p\u00E1ginas lejos de su tipo de contenido real.\nEn el umbral \u00ABAlto\u00BB esta regla de an\u00E1lisis no alertar\u00E1 sobre respuestas de error del cliente o servidor."
+						},
+						{
+							"id": "40",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/sqli_blind/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/sqli_blind\/",
+							"method": "GET",
+							"param": "x-content-type-options",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Este problema a\u00FAn se aplica a las p\u00E1ginas de tipo error (401, 403, 500, etc.), ya que esas p\u00E1ginas a menudo se ven afectadas por problemas de inyecci\u00F3n, en cuyo caso a\u00FAn existe la preocupaci\u00F3n de que los navegadores husmeen las p\u00E1ginas lejos de su tipo de contenido real.\nEn el umbral \u00ABAlto\u00BB esta regla de an\u00E1lisis no alertar\u00E1 sobre respuestas de error del cliente o servidor."
+						}
+					],
+					"count": "5",
+					"systemic": true,
+					"solution": "<p>Aseg\u00FArese de que la aplicaci\u00F3n/servidor web establece el encabezado Content-Type adecuadamente, y que establece el encabezado X-Content-Type-Options a 'nosniff' para todas las p\u00E1ginas web.</p><p>Si es posible, aseg\u00FArese de que el usuario final utiliza un navegador web moderno y compatible con los est\u00E1ndares que no realiza MIME-sniffing en absoluto, o que puede ser dirigido por la aplicaci\u00F3n web/servidor web para que no realice MIME-sniffing.</p>",
+					"otherinfo": "<p>Este problema a\u00FAn se aplica a las p\u00E1ginas de tipo error (401, 403, 500, etc.), ya que esas p\u00E1ginas a menudo se ven afectadas por problemas de inyecci\u00F3n, en cuyo caso a\u00FAn existe la preocupaci\u00F3n de que los navegadores husmeen las p\u00E1ginas lejos de su tipo de contenido real.</p><p>En el umbral \u00ABAlto\u00BB esta regla de an\u00E1lisis no alertar\u00E1 sobre respuestas de error del cliente o servidor.</p>",
+					"reference": "<p>https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)</p><p>https://owasp.org/www-community/Security_Headers</p>",
+					"cweid": "693",
+					"wascid": "15",
+					"sourceid": "15"
+				},
+				{
+					"pluginid": "10009",
+					"alertRef": "10009",
+					"alert": "Fuga de informaci\u00F3n en el Banner de la P\u00E1gina",
+					"name": "Fuga de informaci\u00F3n en el Banner de la P\u00E1gina",
+					"riskcode": "1",
+					"confidence": "3",
+					"riskdesc": "Bajo (Alta)",
+					"desc": "<p>El servidor devolvi\u00F3 una cadena mostr\u00F3 el banner con la versi\u00F3n en el contenido de la respuesta. Estas filtraciones de informaci\u00F3n pueden permitir a los atacantes centrarse en problemas espec\u00EDficos que afecten al producto y la versi\u00F3n en uso.</p>",
+					"instances":[ 
+						{
+							"id": "243",
+							"uri": "http://127.0.0.1:8080/DTD/xhtml1-transitional.dtd",
+							"nodeName": "http:\/\/127.0.0.1:8080\/DTD\/xhtml1-transitional.dtd",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25",
+							"otherinfo": "Existe la posibilidad de que lo encontrado est\u00E9 en un valor en los headers, en lugar de en la cadena que coincide en el cuerpo de la respuesta."
+						},
+						{
+							"id": "15",
+							"uri": "http://127.0.0.1:8080/sitemap.xml",
+							"nodeName": "http:\/\/127.0.0.1:8080\/sitemap.xml",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25",
+							"otherinfo": "Existe la posibilidad de que lo encontrado est\u00E9 en un valor en los headers, en lugar de en la cadena que coincide en el cuerpo de la respuesta."
+						},
+						{
+							"id": "218",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/ZAP",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/ZAP",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "Apache/2.4.25",
+							"otherinfo": "Existe la posibilidad de que lo encontrado est\u00E9 en un valor en los headers, en lugar de en la cadena que coincide en el cuerpo de la respuesta."
+						}
+					],
+					"count": "3",
+					"systemic": false,
+					"solution": "<p>Configura el servidor para evitar este tipo de fugas de informaci\u00F3n. Por ejemplo:</p><p>En Tomcat, esto se hace mediante la directiva \"server\" y la implementaci\u00F3n de p\u00E1ginas de error personalizadas.</p><p>En Apache, esto se hace mediante las directivas \"ServerSignature\" y \"ServerTokens\".</p>",
+					"otherinfo": "<p>Existe la posibilidad de que lo encontrado est\u00E9 en un valor en los headers, en lugar de en la cadena que coincide en el cuerpo de la respuesta.</p>",
+					"reference": "<p>https://owasp.org/www-project-web-security-testing-guide/v41/4-Web_Application_Security_Testing/08-Testing_for_Error_Handling/</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "117"
+				},
+				{
+					"pluginid": "2",
+					"alertRef": "2",
+					"alert": "Revelaci\u00F3n de IP privada",
+					"name": "Revelaci\u00F3n de IP privada",
+					"riskcode": "1",
+					"confidence": "2",
+					"riskdesc": "Bajo (Media)",
+					"desc": "<p>Se ha encontrado una IP privada (como 10.x.x.x, 172.x.x.x, 192.168.x.x) o un nombre de host privado de Amazon EC2 (por ejemplo, ip-10-0-56-78) en el cuerpo de la respuesta HTTP. Esta informaci\u00F3n podr\u00EDa ser \u00FAtil para futuros ataques dirigidos a sistemas internos.</p>",
+					"instances":[ 
+						{
+							"id": "188",
+							"uri": "http://127.0.0.1:8080/phpinfo.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/phpinfo.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "172.17.0.2:80",
+							"otherinfo": "172.17.0.2:80\n172.17.0.2\n172.17.0.1\n172.17.0.2\n172.17.0.1\n"
+						},
+						{
+							"id": "96",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/fi/?page=file1.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/fi\/ (page)",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "172.17.0.1",
+							"otherinfo": "172.17.0.1\n"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Eliminar la direcci\u00F3n IP privada del cuerpo de la respuesta HTTP. Para los comentarios, utilice comentarios JSP/ASP/PHP en lugar de comentarios HTML/JavaScript que pueden ser vistos por los navegadores de los clientes.</p>",
+					"otherinfo": "<p>172.17.0.2:80</p><p>172.17.0.2</p><p>172.17.0.1</p><p>172.17.0.2</p><p>172.17.0.1</p><p></p>",
+					"reference": "<p>https://datatracker.ietf.org/doc/html/rfc1918</p>",
+					"cweid": "497",
+					"wascid": "13",
+					"sourceid": "82"
+				},
+				{
+					"pluginid": "10109",
+					"alertRef": "10109",
+					"alert": "Aplicaci\u00F3n Web Moderna",
+					"name": "Aplicaci\u00F3n Web Moderna",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informativo (Media)",
+					"desc": "<p>The application appears to be a modern web application. If you need to explore it automatically then the Client Spider may well be more effective than the standard one.</p>",
+					"instances":[ 
+						{
+							"id": "200",
+							"uri": "http://127.0.0.1:8080/phpinfo.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/phpinfo.php",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "<a name=\"module_apache2handler\">apache2handler</a>",
+							"otherinfo": "Se han encontrado enlaces que no tienen atributos href tradicionales, lo que indica que se trata de una aplicaci\u00F3n web moderna."
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Se trata de una alerta informativa, por lo que no es necesario realizar ning\u00FAn cambio.</p>",
+					"otherinfo": "<p>Se han encontrado enlaces que no tienen atributos href tradicionales, lo que indica que se trata de una aplicaci\u00F3n web moderna.</p>",
+					"reference": "",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "82"
+				},
+				{
+					"pluginid": "10031",
+					"alertRef": "10031",
+					"alert": "Atributo de elemento HTML controlable por el usuario (XSS potencial)",
+					"name": "Atributo de elemento HTML controlable por el usuario (XSS potencial)",
+					"riskcode": "0",
+					"confidence": "1",
+					"riskdesc": "Informativo (Baja)",
+					"desc": "<p>Esta comprobaci\u00F3n examina la entrada proporcionada por el usuario en par\u00E1metros de cadenas de consulta y datos POST para identificar d\u00F3nde podr\u00EDan estar controlados ciertos valores de atributos HTML. Esto proporciona detecci\u00F3n de puntos calientes para XSS (cross-site scripting) que requerir\u00E1n una revisi\u00F3n adicional por parte de un analista de seguridad para determinar la explotabilidad.</p>",
+					"instances":[ 
+						{
+							"id": "214",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/sqli/?Submit=Submit&id=ZAP",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/sqli\/ (Submit,id)",
+							"method": "GET",
+							"param": "Submit",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [type] La entrada de usuario encontrada era:Submit=Submit El valor controlado por el usuario era:submit."
+						},
+						{
+							"id": "258",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/csp/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/csp\/ ()(include)",
+							"method": "POST",
+							"param": "include",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [script] atributo [src] La entrada de usuario encontrada era:include=ZAP El valor controlado por el usuario era:zap."
+						},
+						{
+							"id": "171",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/exec/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/exec\/ ()(Submit,ip)",
+							"method": "POST",
+							"param": "Submit",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [type] La entrada de usuario encontrada era:Submit=Submit El valor controlado por el usuario era:submit."
+						},
+						{
+							"id": "273",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/ ()(phrase,send,token)",
+							"method": "POST",
+							"param": "phrase",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [value] La entrada de usuario encontrada era:phrase=ChangeMe El valor controlado por el usuario era:changeme."
+						},
+						{
+							"id": "274",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/ ()(phrase,send,token)",
+							"method": "POST",
+							"param": "send",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [type] La entrada de usuario encontrada era:send=Submit El valor controlado por el usuario era:submit."
+						},
+						{
+							"id": "227",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/upload/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/upload\/ ()(MAX_FILE_SIZE,Upload,uploaded)",
+							"method": "POST",
+							"param": "MAX_FILE_SIZE",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [value] La entrada de usuario encontrada era:MAX_FILE_SIZE=100000 El valor controlado por el usuario era:100000."
+						},
+						{
+							"id": "240",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/upload/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/upload\/ ()(MAX_FILE_SIZE,Upload,uploaded)",
+							"method": "POST",
+							"param": "Upload",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [name] La entrada de usuario encontrada era:Upload=Upload El valor controlado por el usuario era:uploaded."
+						},
+						{
+							"id": "244",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/ ()(btnClear,mtxMessage,txtName)",
+							"method": "POST",
+							"param": "btnClear",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [value] La entrada de usuario encontrada era:btnClear=Clear Guestbook El valor controlado por el usuario era:clear guestbook."
+						},
+						{
+							"id": "228",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/xss_s/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/xss_s\/ ()(btnSign,mtxMessage,txtName)",
+							"method": "POST",
+							"param": "btnSign",
+							"attack": "",
+							"evidence": "",
+							"otherinfo": "Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [value] La entrada de usuario encontrada era:btnSign=Sign Guestbook El valor controlado por el usuario era:sign guestbook."
+						}
+					],
+					"count": "9",
+					"systemic": false,
+					"solution": "<p>V\u00E1lida la entrada y sanea la salida antes de escribirla en cualquier atributo HTML.</p>",
+					"otherinfo": "<p>Se han encontrado valores de atributos HTML controlados por el usuario. Intente inyectar caracteres especiales para ver si es posible XSS. La p\u00E1gina en la siguiente URL parece incluir una entrada de usuario en una etiqueta [input] atributo [type] La entrada de usuario encontrada era:Submit=Submit El valor controlado por el usuario era:submit.</p>",
+					"reference": "<p>https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html</p>",
+					"cweid": "20",
+					"wascid": "20",
+					"sourceid": "107"
+				},
+				{
+					"pluginid": "10027",
+					"alertRef": "10027",
+					"alert": "Divulgaci\u00F3n de informaci\u00F3n - Comentarios sospechosos",
+					"name": "Divulgaci\u00F3n de informaci\u00F3n - Comentarios sospechosos",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informativo (Media)",
+					"desc": "<p>The response appears to contain suspicious comments which may help an attacker.</p>",
+					"instances":[ 
+						{
+							"id": "49",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/",
+							"method": "GET",
+							"param": "",
+							"attack": "",
+							"evidence": "/*\nMD5 code from here\nhttps://github",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nMD5 code from here\nhttps://github.com/blueimp/JavaScript-MD5\n*/\", see evidence field for the suspicious comment/snippet."
+						},
+						{
+							"id": "215",
+							"uri": "http://127.0.0.1:8080/vulnerabilities/javascript/",
+							"nodeName": "http:\/\/127.0.0.1:8080\/vulnerabilities\/javascript\/ ()(phrase,send,token)",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "/*\nMD5 code from here\nhttps://github",
+							"otherinfo": "The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*\nMD5 code from here\nhttps://github.com/blueimp/JavaScript-MD5\n*/\", see evidence field for the suspicious comment/snippet."
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Eliminar todos los comentarios que muestren informaci\u00F3n que pueda ayudar a un atacante y solucionar el problema al que se refieren.</p>",
+					"otherinfo": "<p>The following pattern was used: \\bFROM\\b and was detected in likely comment: \"/*</p><p>MD5 code from here</p><p>https://github.com/blueimp/JavaScript-MD5</p><p>*/\", see evidence field for the suspicious comment/snippet.</p>",
+					"reference": "",
+					"cweid": "615",
+					"wascid": "13",
+					"sourceid": "42"
+				},
+				{
+					"pluginid": "10111",
+					"alertRef": "10111",
+					"alert": "Petici\u00F3n de Autenticaci\u00F3n Identificada",
+					"name": "Petici\u00F3n de Autenticaci\u00F3n Identificada",
+					"riskcode": "0",
+					"confidence": "3",
+					"riskdesc": "Informativo (Alta)",
+					"desc": "<p>La petici\u00F3n en cuesti\u00F3n se ha identificado como una petici\u00F3n de autenticaci\u00F3n. El campo \"Otra informaci\u00F3n\" contiene un conjunto de l\u00EDneas key=vvalue que identifican cualquier campo relevante. Si la solicitud est\u00E1 en un contexto que tiene un m\u00E9todo de autenticaci\u00F3n configurado como \"Detecci\u00F3n autom\u00E1tica\", esta regla cambiar\u00E1 la autenticaci\u00F3n para que coincida con la petici\u00F3n identificada.</p>",
+					"instances":[ 
+						{
+							"id": "0",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php ()(Login,password,user_token,username)",
+							"method": "POST",
+							"param": "Login",
+							"attack": "",
+							"evidence": "password",
+							"otherinfo": "userParam=Login\nuserValue=Login\npasswordParam=password"
+						}
+					],
+					"count": "1",
+					"systemic": false,
+					"solution": "<p>Se trata de una alerta informativa y no de una vulnerabilidad, por lo que no hay nada que corregir.</p>",
+					"otherinfo": "<p>userParam=Login</p><p>userValue=Login</p><p>passwordParam=password</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/auth-req-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "77"
+				},
+				{
+					"pluginid": "10112",
+					"alertRef": "10112",
+					"alert": "Respuesta de Gesti\u00F3n de Sesi\u00F3n Identificada",
+					"name": "Respuesta de Gesti\u00F3n de Sesi\u00F3n Identificada",
+					"riskcode": "0",
+					"confidence": "2",
+					"riskdesc": "Informativo (Media)",
+					"desc": "<p>Se ha identificado que la respuesta dada contiene un token de gesti\u00F3n de sesi\u00F3n. El campo 'Other Info' contiene un conjunto de tokens de cabecera que pueden utilizarse en el m\u00E9todo Header Based Session Management (gesti\u00F3n de sesi\u00F3n basado en cabecera). Si la petici\u00F3n se encuentra en un contexto que tiene un m\u00E9todo Session Management establecido en \"Auto-Detect\", esta regla cambiar\u00E1 la gesti\u00F3n de sesi\u00F3n para utilizar los tokens identificados.</p>",
+					"instances":[ 
+						{
+							"id": "1",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "PHPSESSID",
+							"otherinfo": "cookie:PHPSESSID"
+						},
+						{
+							"id": "2",
+							"uri": "http://127.0.0.1:8080/login.php",
+							"nodeName": "http:\/\/127.0.0.1:8080\/login.php",
+							"method": "GET",
+							"param": "PHPSESSID",
+							"attack": "",
+							"evidence": "PHPSESSID",
+							"otherinfo": "cookie:PHPSESSID"
+						}
+					],
+					"count": "2",
+					"systemic": false,
+					"solution": "<p>Se trata de una alerta informativa y no de una vulnerabilidad, por lo que no hay nada que corregir.</p>",
+					"otherinfo": "<p>cookie:PHPSESSID</p>",
+					"reference": "<p>https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id/</p>",
+					"cweid": "-1",
+					"wascid": "-1",
+					"sourceid": "78"
+				}
+			]
+		}
+	],
+	"sequences":[
+	]
+
+}

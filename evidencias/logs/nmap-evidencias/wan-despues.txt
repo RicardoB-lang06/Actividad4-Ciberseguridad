@@ -1,0 +1,51 @@
+### Escaneos WAN (despues) contra 10.0.2.3 - 2026-11-16 15:43:28 - origen: 10.0.2.4 
+
+===== nmap -sN 10.0.2.3  [2026-11-16 15:43:28]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:43 -0500
+Nmap scan report for 10.0.2.3
+Host is up (0.0017s latency).
+All 1000 scanned ports on 10.0.2.3 are in ignored states.
+Not shown: 1000 open|filtered tcp ports (no-response)
+MAC Address: 08:00:27:4C:4E:A6 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 26.92 seconds
+
+===== nmap -sF 10.0.2.3  [2026-11-16 15:43:55]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:43 -0500
+Nmap scan report for 10.0.2.3
+Host is up (0.0014s latency).
+All 1000 scanned ports on 10.0.2.3 are in ignored states.
+Not shown: 1000 open|filtered tcp ports (no-response)
+MAC Address: 08:00:27:4C:4E:A6 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 29.58 seconds
+
+===== nmap -sX 10.0.2.3  [2026-11-16 15:44:24]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:44 -0500
+Nmap scan report for 10.0.2.3
+Host is up (0.00081s latency).
+All 1000 scanned ports on 10.0.2.3 are in ignored states.
+Not shown: 1000 open|filtered tcp ports (no-response)
+MAC Address: 08:00:27:4C:4E:A6 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 26.78 seconds
+
+===== nmap -sU --top-ports 100 10.0.2.3  [2026-11-16 15:44:51]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:44 -0500
+Nmap scan report for 10.0.2.3
+Host is up (0.0013s latency).
+All 100 scanned ports on 10.0.2.3 are in ignored states.
+Not shown: 100 open|filtered udp ports (no-response)
+MAC Address: 08:00:27:4C:4E:A6 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 6.31 seconds
+
+===== nmap -sS -p 1-1000 10.0.2.3  [2026-11-16 15:44:58]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:44 -0500
+Nmap scan report for 10.0.2.3
+Host is up (0.0013s latency).
+All 1000 scanned ports on 10.0.2.3 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: 08:00:27:4C:4E:A6 (Oracle VirtualBox virtual NIC)
+
+Nmap done: 1 IP address (1 host up) scanned in 25.37 seconds

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!-- Actividad 4 - Aliases de pfSense. Restaurar en Diagnostics > Backup & Restore, Restore area: Aliases (ANTES de las reglas). -->
+<aliases>
+	<alias>
+		<name>RFC1918</name>
+		<type>network</type>
+		<address>10.0.0.0/8 172.16.0.0/12 192.168.0.0/16</address>
+		<descr><![CDATA[Redes privadas (bloqueo lateral)]]></descr>
+		<detail><![CDATA[Clase A||Clase B||Clase C]]></detail>
+	</alias>
+	<alias>
+		<name>NET_DMZ</name>
+		<type>network</type>
+		<address>192.168.10.0/24</address>
+		<descr><![CDATA[VLAN 10 - DMZ]]></descr>
+		<detail><![CDATA[DMZ]]></detail>
+	</alias>
+	<alias>
+		<name>NET_INTERNA</name>
+		<type>network</type>
+		<address>192.168.20.0/24</address>
+		<descr><![CDATA[VLAN 20 - Red interna]]></descr>
+		<detail><![CDATA[Red interna]]></detail>
+	</alias>
+	<alias>
+		<name>NET_IOT</name>
+		<type>network</type>
+		<address>192.168.30.0/24</address>
+		<descr><![CDATA[VLAN 30 - Dispositivos IoT]]></descr>
+		<detail><![CDATA[IoT]]></detail>
+	</alias>
+	<alias>
+		<name>NET_VPN</name>
+		<type>network</type>
+		<address>10.10.99.0/24</address>
+		<descr><![CDATA[Pool de clientes VPN IPsec]]></descr>
+		<detail><![CDATA[Clientes VPN]]></detail>
+	</alias>
+	<alias>
+		<name>SRV_WEB_DMZ</name>
+		<type>host</type>
+		<address>192.168.10.10</address>
+		<descr><![CDATA[Servidor web publicado en la DMZ]]></descr>
+		<detail><![CDATA[Web DMZ]]></detail>
+	</alias>
+	<alias>
+		<name>SRV_INTERNOS</name>
+		<type>host</type>
+		<address>192.168.20.10 192.168.20.11</address>
+		<descr><![CDATA[Servidores internos accesibles por VPN]]></descr>
+		<detail><![CDATA[Archivos||Intranet]]></detail>
+	</alias>
+	<alias>
+		<name>ADMIN_HOSTS</name>
+		<type>host</type>
+		<address>192.168.20.50</address>
+		<descr><![CDATA[Estacion de administracion]]></descr>
+		<detail><![CDATA[Admin]]></detail>
+	</alias>
+	<alias>
+		<name>IOT_HUB</name>
+		<type>host</type>
+		<address>192.168.30.5</address>
+		<descr><![CDATA[Hub/broker MQTT de IoT]]></descr>
+		<detail><![CDATA[Hub IoT]]></detail>
+	</alias>
+	<alias>
+		<name>PUERTOS_WEB</name>
+		<type>port</type>
+		<address>80 443</address>
+		<descr><![CDATA[HTTP y HTTPS]]></descr>
+		<detail><![CDATA[HTTP||HTTPS]]></detail>
+	</alias>
+	<alias>
+		<name>PUERTOS_SALIDA</name>
+		<type>port</type>
+		<address>80 443 587 993</address>
+		<descr><![CDATA[Salida permitida a Internet desde la red interna]]></descr>
+		<detail><![CDATA[HTTP||HTTPS||SMTP envio||IMAPS]]></detail>
+	</alias>
+	<alias>
+		<name>PUERTOS_IOT</name>
+		<type>port</type>
+		<address>443 8883</address>
+		<descr><![CDATA[Salida IoT: HTTPS y MQTT sobre TLS]]></descr>
+		<detail><![CDATA[HTTPS||MQTTS]]></detail>
+	</alias>
+	<alias>
+		<name>PUERTOS_VPN_SRV</name>
+		<type>port</type>
+		<address>443 445</address>
+		<descr><![CDATA[Servicios internos permitidos por VPN]]></descr>
+		<detail><![CDATA[HTTPS||SMB]]></detail>
+	</alias>
+	<alias>
+		<name>PUERTOS_ADMIN_FW</name>
+		<type>port</type>
+		<address>22 80 443</address>
+		<descr><![CDATA[Puertos de administracion del firewall]]></descr>
+		<detail><![CDATA[SSH||HTTP||HTTPS]]></detail>
+	</alias>
+</aliases>

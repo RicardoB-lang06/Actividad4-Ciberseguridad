@@ -1,0 +1,10 @@
+# Actividad 4 - Lista personalizada DNSBL (pfBlockerNG > DNSBL > DNSBL Groups > DNSBL Custom_List)
+# Un dominio por linea. Los dominios listados se resuelven al sinkhole de pfBlockerNG (VIP 10.10.10.1).
+# Dominio de prueba usado para validar el bloqueo:
+internetbadguys.com
+# Dominios de ejemplo con patrones tipicos de phishing (suplantacion de banca y paqueteria):
+bbva-verificacion-cuenta.com
+banorte-seguridad-acceso.com
+sat-devolucion-pendiente.com
+dhl-paquete-retenido-mx.com
+mercadolibre-confirmar-pago.com

@@ -1,0 +1,234 @@
+! =====================================================================
+! Actividad 4 - Configuracion para Cisco Packet Tracer (probado para 8.x/9.0)
+! VERSION CORREGIDA. Cambios respecto a packet-tracer-config.txt (todos marcados con  [CORRECCION]):
+!   1) R-EDGE: la licencia securityk9 va en un BLOQUE APARTE antes de todo (requiere reload).
+!   2) R-EDGE: se agregan "ip domain-name" y la generacion de llaves RSA ANTES de "ip ssh version 2"
+!      (sin llaves, PT responde "% Please create RSA keys ... to enable SSH v2").
+!   3) Se agregan los equipos finales que el archivo original no definia (tabla al final).
+!   4) [OPCIONAL] WAN-IN: respuesta UDP de DNS/NTP para la DMZ e IoT (no afecta las pruebas).
+! Pegar cada bloque en la CLI del equipo indicado (pestana CLI). Esperar a que termine cada bloque.
+! =====================================================================
+
+! ---------------------- CABLEADO (Copper Straight-Through salvo indicacion) ----------------------
+!  R-EDGE  Gi0/0  <-> SW-CORE Gi0/1       (troncal 802.1Q)
+!  R-EDGE  Gi0/1  <-> R-ISP   Gi0/0       (WAN 203.0.113.0/30)
+!  R-ISP   Gi0/1  <-> PC-Remoto Fa0       (Copper Cross-Over, o via un switch 2960 adicional)
+!  SW-CORE Fa0/1  <-> Web-DMZ (Server-PT)       192.168.10.10/24  gw 192.168.10.1
+!  SW-CORE Fa0/5  <-> Srv-Archivos (Server-PT)  192.168.20.10/24  gw 192.168.20.1
+!  SW-CORE Fa0/6  <-> Srv-Intranet (Server-PT)  192.168.20.11/24  gw 192.168.20.1
+!  SW-CORE Fa0/7  <-> PC-Admin (PC-PT)          192.168.20.50/24  gw 192.168.20.1
+!  SW-CORE Fa0/15 <-> Hub-IoT (PC-PT o Home Gateway/Server) 192.168.30.5/24 gw 192.168.30.1
+!  PC-Remoto: 198.51.100.10/24 gw 198.51.100.1
+!  Routers ISR 2911 / Switch 2960-24TT. En Web-DMZ habilitar HTTP/HTTPS (Services).
+
+! ====================== BLOQUE 1 - SW-CORE (Catalyst 2960) ======================
+enable
+configure terminal
+hostname SW-CORE
+vlan 10
+ name DMZ
+vlan 20
+ name INTERNA
+vlan 30
+ name IOT
+vlan 999
+ name NATIVA-SIN-USO
+interface GigabitEthernet0/1
+ description Troncal hacia R-EDGE
+ switchport mode trunk
+ switchport trunk native vlan 999
+ switchport trunk allowed vlan 10,20,30
+ switchport nonegotiate
+interface range FastEthernet0/1 - 4
+ description DMZ
+ switchport mode access
+ switchport access vlan 10
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security violation restrict
+ switchport port-security mac-address sticky
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+interface range FastEthernet0/5 - 14
+ description INTERNA
+ switchport mode access
+ switchport access vlan 20
+ switchport port-security
+ switchport port-security mac-address sticky
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+interface range FastEthernet0/15 - 20
+ description IOT
+ switchport mode access
+ switchport access vlan 30
+ switchport port-security
+ switchport port-security mac-address sticky
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+interface range FastEthernet0/21 - 24, GigabitEthernet0/2
+ description Puertos sin uso
+ switchport mode access
+ switchport access vlan 999
+ shutdown
+end
+write memory
+
+! ====================== BLOQUE 2 - R-EDGE: LICENCIA (pegar SOLO esto primero) ======================
+! [CORRECCION] Cuando aparezca "ACCEPT? [yes/no]:" escribe  yes  y Enter.
+! Luego "write memory" y "reload" (si pregunta "Proceed with reload? [confirm]" pulsa Enter).
+! Tras reiniciar, verifica con:  show version | include securityk9   -> debe decir "securityk9 ... Permanent/EvalRightToUse"
+enable
+configure terminal
+license boot module c2900 technology-package securityk9
+end
+write memory
+reload
+
+! ====================== BLOQUE 3 - R-EDGE (ISR 2911), despues del reload ======================
+enable
+configure terminal
+hostname R-EDGE
+enable secret Cambiar#Lab2026
+username vpnuser secret VpnUser#2026
+aaa new-model
+aaa authentication login VPN-AUTH local
+aaa authorization network VPN-GRUPO local
+!
+interface GigabitEthernet0/0
+ no shutdown
+interface GigabitEthernet0/0.10
+ description DMZ
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip nat inside
+ ip access-group DMZ-IN in
+interface GigabitEthernet0/0.20
+ description INTERNA
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ ip nat inside
+interface GigabitEthernet0/0.30
+ description IOT
+ encapsulation dot1Q 30
+ ip address 192.168.30.1 255.255.255.0
+ ip nat inside
+ ip access-group IOT-IN in
+!
+ip access-list extended DMZ-IN
+ permit tcp host 192.168.10.10 eq www any established
+ permit tcp host 192.168.10.10 eq 443 any established
+ permit tcp 192.168.10.0 0.0.0.255 eq 22 host 192.168.20.50 established
+ permit icmp 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255 echo-reply
+ deny ip 192.168.10.0 0.0.0.255 192.168.20.0 0.0.0.255
+ deny ip 192.168.10.0 0.0.0.255 192.168.30.0 0.0.0.255
+ deny ip 192.168.10.0 0.0.0.255 10.10.99.0 0.0.0.255
+ permit tcp 192.168.10.0 0.0.0.255 any eq www
+ permit tcp 192.168.10.0 0.0.0.255 any eq 443
+ permit udp 192.168.10.0 0.0.0.255 any eq domain
+!
+ip access-list extended IOT-IN
+ permit tcp host 192.168.30.5 eq 8883 192.168.20.0 0.0.0.255 established
+ permit tcp host 192.168.30.5 eq 443 192.168.20.0 0.0.0.255 established
+ permit icmp 192.168.30.0 0.0.0.255 192.168.20.0 0.0.0.255 echo-reply
+ deny ip 192.168.30.0 0.0.0.255 192.168.10.0 0.0.0.255
+ deny ip 192.168.30.0 0.0.0.255 192.168.20.0 0.0.0.255
+ deny ip 192.168.30.0 0.0.0.255 10.10.99.0 0.0.0.255
+ permit tcp 192.168.30.0 0.0.0.255 any eq 443
+ permit tcp 192.168.30.0 0.0.0.255 any eq 8883
+ permit udp 192.168.30.0 0.0.0.255 any eq domain
+ permit udp 192.168.30.0 0.0.0.255 any eq 123
+!
+ip access-list extended WAN-IN
+ permit udp any host 203.0.113.2 eq isakmp
+ permit udp any host 203.0.113.2 eq 4500
+ permit esp any host 203.0.113.2
+ permit tcp any host 203.0.113.2 eq www
+ permit tcp any host 203.0.113.2 eq 443
+ permit ip 10.10.99.0 0.0.0.255 192.168.20.0 0.0.0.255
+ permit tcp any any established
+ permit icmp any any echo-reply
+ ! [OPCIONAL] respuestas DNS/NTP para DMZ e IoT (descomentar si lo necesitas):
+ ! permit udp any eq domain any
+ ! permit udp any eq ntp any
+ deny ip any any
+!
+ip local pool VPN-POOL 10.10.99.10 10.10.99.50
+crypto isakmp policy 10
+ encr aes 256
+ hash sha
+ authentication pre-share
+ group 5
+ lifetime 86400
+crypto isakmp client configuration group VPN-EMPLEADOS
+ key GrupoVPN#2026
+ pool VPN-POOL
+ ! [CORRECCION] Packet Tracer no acepta 'acl' (tunel dividido) en el grupo; el limite lo pone WAN-IN
+crypto ipsec transform-set TS-AES256 esp-aes 256 esp-sha-hmac
+crypto dynamic-map DYN-MAP 10
+ set transform-set TS-AES256
+ reverse-route
+crypto map VPN-MAP client authentication list VPN-AUTH
+crypto map VPN-MAP isakmp authorization list VPN-GRUPO
+crypto map VPN-MAP client configuration address respond
+crypto map VPN-MAP 10 ipsec-isakmp dynamic DYN-MAP
+ip access-list extended VPN-SPLIT
+ permit ip 192.168.20.0 0.0.0.255 any
+!
+interface GigabitEthernet0/1
+ description WAN hacia R-ISP
+ ip address 203.0.113.2 255.255.255.252
+ ip nat outside
+ ip access-group WAN-IN in
+ crypto map VPN-MAP
+ no shutdown
+ip route 0.0.0.0 0.0.0.0 203.0.113.1
+!
+ip access-list extended NAT-LIST
+ deny ip 192.168.20.0 0.0.0.255 10.10.99.0 0.0.0.255
+ permit ip 192.168.10.0 0.0.0.255 any
+ permit ip 192.168.20.0 0.0.0.255 any
+ permit ip 192.168.30.0 0.0.0.255 any
+ip nat inside source list NAT-LIST interface GigabitEthernet0/1 overload
+ip nat inside source static tcp 192.168.10.10 80 203.0.113.2 80
+ip nat inside source static tcp 192.168.10.10 443 203.0.113.2 443
+!
+! [CORRECCION] 'no ip http server' no existe en Packet Tracer; se omite
+service password-encryption
+! [CORRECCION] SSH v2 requiere dominio y llaves RSA antes de activarse
+ip domain-name lab.local
+crypto key generate rsa general-keys modulus 1024
+ip ssh version 2
+! [CORRECCION] con aaa new-model, 'login local' no se acepta en vty; se usa una lista AAA
+aaa authentication login default local
+line vty 0 4
+ transport input ssh
+ login authentication default
+end
+write memory
+! Si tu version de PT no acepta "general-keys modulus 1024", usa:  crypto key generate rsa  y responde 1024.
+
+! ====================== BLOQUE 4 - R-ISP (ISR 2911) ======================
+enable
+configure terminal
+hostname R-ISP
+interface GigabitEthernet0/0
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+interface GigabitEthernet0/1
+ ip address 198.51.100.1 255.255.255.0
+ no shutdown
+end
+write memory
+
+! ====================== BLOQUE 5 - PC-Remoto (no es CLI) ======================
+! Desktop > IP Configuration: 198.51.100.10 / 255.255.255.0 / gateway 198.51.100.1
+! Desktop > VPN: GroupName VPN-EMPLEADOS | Group Key GrupoVPN#2026
+!                Host Server 203.0.113.2 | Username vpnuser | Password VpnUser#2026  -> Connect
+! Debe aparecer "VPN is connected" y una IP del pool 10.10.99.10-50.
+
+! ====================== PRUEBAS / CAPTURAS ======================
+! Captura 9 : vista logica completa de la topologia (todas las luces verdes) + "show vlan brief" en SW-CORE.
+! Captura 10: PC-Remoto con "VPN is connected" + Command Prompt:  ipconfig  y  ping 192.168.20.10  (responde).
+! Captura 11: PC-Remoto  ping 192.168.30.5  (falla)  +  en R-EDGE:  show crypto isakmp sa  y  show crypto ipsec sa
+!             (encaps/decaps > 0).  Opcional: show access-lists  (contadores de deny en IOT-IN / DMZ-IN).
+! Prueba extra de segmentacion: desde Hub-IoT  ping 192.168.20.10  -> debe fallar (IOT-IN).

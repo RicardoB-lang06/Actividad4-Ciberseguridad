@@ -1,0 +1,107 @@
+# Actividad 4 - Plan del Automation Framework de ZAP (escaneo autenticado de DVWA en 127.0.0.1:8080)
+# __REPORT_DIR__ lo reemplaza zap-run.ps1 por la ruta absoluta de evidencias\reportes.
+# Requisito en ZAP: "user_token" registrado como token Anti-CSRF (ver GUIA_FASE1.md, paso 3).
+env:
+  contexts:
+    - name: DVWA
+      urls:
+        - http://127.0.0.1:8080/
+      includePaths:
+        - http://127\.0\.0\.1:8080.*
+      excludePaths:
+        - http://127\.0\.0\.1:8080/logout\.php.*
+        - http://127\.0\.0\.1:8080/setup\.php.*
+        - http://127\.0\.0\.1:8080/security\.php.*
+        - http://127\.0\.0\.1:8080/login\.php.*
+        # El spider llena el formulario de cambio de contrasena con "ZAP" y cambia la clave de admin,
+        # lo que cierra la sesion a mitad del escaneo. Se excluye para mantener el escaneo autenticado.
+        - http://127\.0\.0\.1:8080/vulnerabilities/csrf/.*
+        # Insecure CAPTCHA en low: su formulario oculto (step=2) cambia la clave sin validar el captcha.
+        - http://127\.0\.0\.1:8080/vulnerabilities/captcha/.*
+        # Brute Force: pagina con usuario y contrasena que se excluye para no tocar la sesion de admin.
+        - http://127\.0\.0\.1:8080/vulnerabilities/brute/.*
+      authentication:
+        method: form
+        parameters:
+          loginPageUrl: http://127.0.0.1:8080/login.php
+          loginRequestUrl: http://127.0.0.1:8080/login.php
+          loginRequestBody: username={%username%}&password={%password%}&Login=Login&user_token=x
+        verification:
+          method: poll
+          loggedInRegex: \Qlogout.php\E
+          loggedOutRegex: (?:Location:\s*login\.php|\Qaction="login.php"\E)
+          pollFrequency: 60
+          pollUnits: requests
+          pollUrl: http://127.0.0.1:8080/index.php
+      sessionManagement:
+        method: cookie
+      users:
+        - name: admin
+          credentials:
+            username: admin
+            password: password
+  parameters:
+    failOnError: true
+    failOnWarning: false
+    progressToStdout: true
+
+jobs:
+  - type: spider
+    parameters:
+      context: DVWA
+      user: admin
+      url: http://127.0.0.1:8080/index.php
+      maxDuration: 5
+      maxDepth: 6
+
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 5
+
+  - type: activeScan
+    parameters:
+      context: DVWA
+      user: admin
+      maxRuleDurationInMins: 5
+      maxScanDurationInMins: 45
+      threadPerHost: 1   # un hilo: con 4 hilos ZAP 2.17 llego a mandar peticiones sin la cookie de sesion
+    # Politica enfocada: inyecciones del OWASP Top 10 (A03) para que el tiempo se use en lo que pide la actividad
+    policyDefinition:
+      defaultStrength: medium
+      defaultThreshold: 'off'
+      rules:
+        - id: 40018   # SQL Injection
+          threshold: medium
+        - id: 40012   # Cross Site Scripting (Reflected)
+          threshold: medium
+        - id: 40014   # Cross Site Scripting (Persistent)
+          threshold: medium
+        - id: 40016   # XSS Persistent - Prime
+          threshold: medium
+        - id: 40017   # XSS Persistent - Spider
+          threshold: medium
+        - id: 90020   # Remote OS Command Injection
+          threshold: medium
+        - id: 6       # Path Traversal
+          threshold: medium
+        - id: 40003   # CRLF Injection
+          threshold: medium
+
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 5
+
+  - type: report
+    parameters:
+      template: traditional-html
+      reportDir: __REPORT_DIR__
+      reportFile: ZAP-DVWA-reporte.html
+      reportTitle: Actividad 4 - Escaneo autenticado de DVWA (OWASP ZAP)
+    risks: [high, medium, low, info]
+    confidences: [high, medium, low, confirmed]
+
+  - type: report
+    parameters:
+      template: traditional-json
+      reportDir: __REPORT_DIR__
+      reportFile: ZAP-DVWA-reporte.json

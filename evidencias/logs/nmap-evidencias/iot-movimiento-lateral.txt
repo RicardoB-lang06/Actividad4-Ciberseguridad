@@ -1,0 +1,12 @@
+### Escaneos desde IOT - 2026-11-16 15:50:46 - origen: 192.168.30.66 
+
+===== nmap -sn -PE 192.168.10.0/24  [2026-11-16 15:50:46]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:50 -0500
+mass_dns: warning: Unable to determine any DNS servers. Reverse DNS is disabled. Try using --system-dns or specify valid servers with --dns-servers
+Nmap done: 256 IP addresses (0 hosts up) scanned in 52.20 seconds
+
+===== nmap -sS -p 22,445,3389 192.168.20.1  [2026-11-16 15:51:38]
+Starting Nmap 7.99 ( https://nmap.org ) at 2026-11-16 15:51 -0500
+setup_target: failed to determine route to 192.168.20.1
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.03 seconds
